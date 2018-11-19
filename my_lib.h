@@ -1,6 +1,9 @@
 #ifndef _MY_LIB_H_
 #define _MY_LIB_H_
 
+#define true 1
+#define false 0
+
 //Keypad.c
 void Init_Key(void);
 int Get_Key_byPolling(void);
@@ -51,6 +54,9 @@ void Lcd_Fill_Rectangular(int x1, int y1, int x2, int y2, int color);
 void Lcd_Printf(int x, int y, int color, int bkcolor, int zx, int zy, char *fmt,...);
 void Lcd_Get_Info_BMP(int * x, int  * y, const unsigned char *fp);
 void Lcd_Draw_BMP(int x, int y, const unsigned char *fp);
+
+//Maze
+void make_maze();
 
 // MMU.c
 void MMU_Init(void);
