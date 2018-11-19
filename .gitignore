@@ -1,0 +1,23 @@
+MDS2450.bin
+MDS2450
+/MDS mini project1
+MDS mini project1.PS
+MDS mini project1.PRI
+MDS mini project1.PR
+MDS mini project1.PO
+MDS mini project1.PFI
+MDS mini project1.IMD
+MDS mini project1.IMB
+MDS mini project1.IAD
+MDS mini project1.IAB
+touch.o
+timer.o
+s3c2450_startup.o
+libs.o
+libc.o
+exception.o
+Uart.o
+Main.o
+Lcd_480x272.o
+Keypad.o
+2450main.map

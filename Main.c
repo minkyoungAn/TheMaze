@@ -1,5 +1,5 @@
 /* ============================================================================ */
-/*	      tetris_main.c : 1인용 테트리스 게임 프로그램		*/
+/*	      tetris_main.c : 미로 게임 프로그램		*/
 /* ============================================================================ */
 
 #include <stdlib.h>
@@ -8,7 +8,27 @@
 #include "my_lib.h"
 #include "macro.h"
 #include "tetris.h"
-#include "./RUBBER.H"
+#include "./images/ALPHA.H"
+#include "./images/BG.H"
+#include "./images/BOTTOM.H"
+#include "./images/WALL.H"
+#include "./images/WALL2.H"
+#include "./images/EPSILON.H"
+#include "./images/EPSILON2.H"
+#include "./images/ETA.H"
+#include "./images/HOME.H"
+#include "./images/LEFT.H"
+#include "./images/LTDOG.H"
+#include "./images/MU.H"
+#include "./images/RIGHT.H"
+#include "./images/RTDOG.H"
+#include "./images/TAU.H"
+#include "./images/TITLE.H"
+#include "./images/TOP.H"
+#include "./images/WARN.H"
+#include "./images/ZETA.H"
+#include "./images/PAW.H"
+
 
 void MMU_Init(void);
 
@@ -218,13 +238,13 @@ int Main(void)
 
 	Show_Welcome("LCD Test");
 
-    Draw_board();					// draw game board
+    //Draw_board();					// draw game board
     Display_bitmap();
 
     //TFT_string(6,18,Green,Black, "Press KEY3");	// wait KEY3 to start
     //TFT_string(6,20,Green,Black, "to start !");
     //Lcd_Printf(6, 18, WHITE, BLACK, 1, 1, "Press KEY3");
-    Lcd_Printf(85, 150, WHITE, BLACK, 1, 1, "to start !");
+    //Lcd_Printf(85, 150, WHITE, BLACK, 1, 1, "to start !");
 
 
     //while(key != Rotate) {
@@ -238,8 +258,8 @@ int Main(void)
     //    }
     //}
 
-    srand(time(NULL));					// initialize random number
-
+    //srand(time(NULL));					// initialize random number
+#if 0
     while (1) {
         for(y=0; y<20; y++)	{		// initialize game
             for(x=0; x<10; x++) {
@@ -425,7 +445,10 @@ int Main(void)
         //while(key != Rotate) {
         //    key = Key_input();
         //}
+
     }
+
+	#endif
 }
 
 void HW_Initial(void)
@@ -543,10 +566,39 @@ void Draw_board(void)				/* draw outline of game board */
 void Display_bitmap(void)
 {
     int xtmp, ytmp;
-
-    Lcd_Get_Info_BMP(&xtmp, &ytmp, rubber);
+    int height_tmp=20;
+	
+    Lcd_Get_Info_BMP(&xtmp, &ytmp, BG);
+    Lcd_Get_Info_BMP(&xtmp, &ytmp, tau);
+    Lcd_Get_Info_BMP(&xtmp, &ytmp, eta);
+	Lcd_Get_Info_BMP(&xtmp, &ytmp, epsilon);
+	Lcd_Get_Info_BMP(&xtmp, &ytmp, alpha);
+	Lcd_Get_Info_BMP(&xtmp, &ytmp, mu);
+	Lcd_Get_Info_BMP(&xtmp, &ytmp, epsilon2);
+	Lcd_Get_Info_BMP(&xtmp, &ytmp, zeta);
+	Lcd_Get_Info_BMP(&xtmp, &ytmp, paw);
     //Lcd_Draw_BMP(((LCD_XSIZE/2)-(xtmp/2)), ((LCD_YSIZE/2)-(ytmp/2)), rubber);
-    Lcd_Draw_BMP(320, 40, rubber);
+
+    Lcd_Draw_BMP(0, 0, BG);
+
+	Lcd_Draw_BMP(375, height_tmp, tau);
+
+	Lcd_Draw_BMP(375, height_tmp+=37, eta);
+
+	Lcd_Draw_BMP(375, height_tmp+=37, epsilon);
+	
+	height_tmp = 20;
+
+	Lcd_Draw_BMP(420, height_tmp+=37, mu);
+
+	Lcd_Draw_BMP(420, height_tmp+=37, alpha);
+
+	Lcd_Draw_BMP(420, height_tmp+=37, zeta);
+
+	Lcd_Draw_BMP(420, height_tmp+=37, epsilon2);
+
+	Lcd_Draw_BMP(400, height_tmp+=37, paw);
+
 }
 
 void Display_score(unsigned int score)			// display score
