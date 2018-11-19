@@ -1,0 +1,927 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+2450TEST	Makefile	/^2450TEST = MDS2450.bin$/;"	m
+AC_MICDATA	2450addr.h	425;"	d
+AC_PCMDATA	2450addr.h	424;"	d
+ADC_x	Main.c	/^volatile int ADC_x=0, ADC_y=0;$/;"	v
+ADC_y	Main.c	/^volatile int ADC_x=0, ADC_y=0;$/;"	v
+AP_RO	option.h	31;"	d
+AP_RW	option.h	30;"	d
+ASRCS	Makefile	/^ASRCS	= s3c2450_startup.S libs.S$/;"	m
+Add_tetris	Main.c	/^void Add_tetris(signed char (*src)[4], signed char *xPos, signed char *yPos, unsigned char number)	\/* add tetromino *\/$/;"	f
+BIT_ADC	2450addr.h	655;"	d
+BIT_ALLMSK	2450addr.h	656;"	d
+BIT_BAT_FLT	2450addr.h	631;"	d
+BIT_CAM	2450addr.h	630;"	d
+BIT_DMA0	2450addr.h	641;"	d
+BIT_DMA1	2450addr.h	642;"	d
+BIT_DMA2	2450addr.h	643;"	d
+BIT_DMA3	2450addr.h	644;"	d
+BIT_EINT0	2450addr.h	624;"	d
+BIT_EINT1	2450addr.h	625;"	d
+BIT_EINT2	2450addr.h	626;"	d
+BIT_EINT3	2450addr.h	627;"	d
+BIT_EINT4_7	2450addr.h	628;"	d
+BIT_EINT8_23	2450addr.h	629;"	d
+BIT_IIC	2450addr.h	651;"	d
+BIT_LCD	2450addr.h	640;"	d
+BIT_NFCON	2450addr.h	648;"	d
+BIT_RTC	2450addr.h	654;"	d
+BIT_SDI	2450addr.h	645;"	d
+BIT_SPI0	2450addr.h	646;"	d
+BIT_SPI1	2450addr.h	653;"	d
+BIT_SUB_AC97	2450addr.h	659;"	d
+BIT_SUB_ADC	2450addr.h	663;"	d
+BIT_SUB_ALLMSK	2450addr.h	658;"	d
+BIT_SUB_CAM_C	2450addr.h	662;"	d
+BIT_SUB_CAM_P	2450addr.h	661;"	d
+BIT_SUB_ERR0	2450addr.h	671;"	d
+BIT_SUB_ERR1	2450addr.h	668;"	d
+BIT_SUB_ERR2	2450addr.h	665;"	d
+BIT_SUB_RXD0	2450addr.h	673;"	d
+BIT_SUB_RXD1	2450addr.h	670;"	d
+BIT_SUB_RXD2	2450addr.h	667;"	d
+BIT_SUB_TC	2450addr.h	664;"	d
+BIT_SUB_TXD0	2450addr.h	672;"	d
+BIT_SUB_TXD1	2450addr.h	669;"	d
+BIT_SUB_TXD2	2450addr.h	666;"	d
+BIT_SUB_WDT	2450addr.h	660;"	d
+BIT_TICK	2450addr.h	632;"	d
+BIT_TIMER0	2450addr.h	634;"	d
+BIT_TIMER1	2450addr.h	635;"	d
+BIT_TIMER2	2450addr.h	636;"	d
+BIT_TIMER3	2450addr.h	637;"	d
+BIT_TIMER4	2450addr.h	638;"	d
+BIT_UART0	2450addr.h	652;"	d
+BIT_UART1	2450addr.h	647;"	d
+BIT_UART2	2450addr.h	639;"	d
+BIT_USBD	2450addr.h	649;"	d
+BIT_USBH	2450addr.h	650;"	d
+BIT_WDT_AC97	2450addr.h	633;"	d
+BLACK	Main.c	35;"	d	file:
+BLUE	Main.c	38;"	d	file:
+BROWN	Main.c	42;"	d	file:
+BV	tetris.h	20;"	d
+CB	option.h	26;"	d
+CC	Makefile	/^CC = $(TOOLPATH)\/bin\/arm-none-eabi-gcc$/;"	m
+CLKVAL	Lcd.c	20;"	d	file:
+CLKVAL	Lcd_480x272.c	23;"	d	file:
+CLR_IF	libs.S	/^CLR_IF:$/;"	l
+CNB	option.h	27;"	d
+CONDITIONAL_EXECUTE	libs.S	/^CONDITIONAL_EXECUTE:$/;"	l
+COPY	Lcd_480x272.c	34;"	d	file:
+CYAN	Main.c	40;"	d	file:
+Cal_x1	Main.c	/^volatile int Cal_x1=848;$/;"	v
+Cal_x2	Main.c	/^volatile int Cal_x2=186;$/;"	v
+Cal_y1	Main.c	/^volatile int Cal_y1=656;$/;"	v
+Cal_y2	Main.c	/^volatile int Cal_y2=349; $/;"	v
+ChangeRomCacheStatus	libc.c	/^void ChangeRomCacheStatus(int attr)$/;"	f
+Check_limit	Main.c	/^void Check_limit(signed char (*src)[4], signed char *xPos, signed char *yPos, signed char *tetris_end, signed char *left_limit, $/;"	f
+Check_line	Main.c	/^signed char Check_line(signed char yPos, signed char height)	\/* check if line is OK *\/$/;"	f
+ClearPending	2450addr.h	675;"	d
+DATA_PROCESS1	libs.S	/^DATA_PROCESS1:$/;"	l
+DATA_PROCESS2	libs.S	/^DATA_PROCESS2:	 $/;"	l
+DESC_SEC	option.h	25;"	d
+DOMAIN0	option.h	36;"	d
+DOMAIN0_ATTR	option.h	39;"	d
+DOMAIN1	option.h	37;"	d
+DOMAIN1_ATTR	option.h	40;"	d
+DOMAIN_CHK	option.h	34;"	d
+DOMAIN_FAULT	option.h	33;"	d
+DOMAIN_NOTCHK	option.h	35;"	d
+DOWN	Main.c	67;"	d	file:
+Dabort_Handler	exception.c	/^void Dabort_Handler(void)$/;"	f
+Delete_tetris	Main.c	/^void Delete_tetris(signed char (*src)[4], signed char *xPos, signed char *yPos)	\/* delete tetromino *\/$/;"	f
+Display_bitmap	Main.c	/^void Display_bitmap(void)$/;"	f
+Display_score	Main.c	/^void Display_score(unsigned int score)			\/\/ display score$/;"	f
+Draw_block	Main.c	/^void Draw_block(unsigned short xPos,unsigned short yPos,unsigned short color,unsigned char type)	\/* draw a block *\/$/;"	f
+Draw_board	Main.c	/^void Draw_board(void)				\/* draw outline of game board *\/$/;"	f
+Draw_game_tetris	Main.c	/^void Draw_game_tetris(void)			\/* draw tetromino of game *\/$/;"	f
+Draw_next_tetris	Main.c	/^void Draw_next_tetris(signed char next)			\/* draw next tetromino *\/$/;"	f
+Drop_tetris	Main.c	/^signed char Drop_tetris(signed char (*src)[4], signed char xPos, signed char yPos, signed char width, signed char height)	\/* drop tetromino *\/$/;"	f
+ElapseTimer_Start	timer.c	/^void ElapseTimer_Start(void)$/;"	f
+ElapseTimer_Stop	timer.c	/^unsigned int ElapseTimer_Stop(void)$/;"	f
+Exception_Init	exception.c	/^void Exception_Init(void)$/;"	f
+FCLK	option.h	17;"	d
+FRAME_BUFFER	option.h	21;"	d
+Fb	Lcd.c	32;"	d	file:
+Fb_ptr	Lcd_480x272.c	/^unsigned short (* Fb_ptr)[LCD_XSIZE];$/;"	v
+Fbuf	Lcd_480x272.c	/^static unsigned int Fbuf[2] = {0x33800000, 0x33c00000};$/;"	v	file:
+GREEN	Main.c	37;"	d	file:
+GRT_COM_MES	libs.S	/^GRT_COM_MES:$/;"	l
+Get_Key_byPolling	Keypad.c	/^int Get_Key_byPolling(void)$/;"	f
+Graphic_Init	Lcd_480x272.c	/^void Graphic_Init(void)$/;"	f
+HANDLER	s3c2450_startup.S	/^HANDLER HandlerDabort, HandleDabort$/;"	l
+HANDLER	s3c2450_startup.S	/^HANDLER HandlerFIQ, HandleFIQ$/;"	l
+HANDLER	s3c2450_startup.S	/^HANDLER HandlerIRQ, HandleIRQ$/;"	l
+HANDLER	s3c2450_startup.S	/^HANDLER HandlerPabort, HandlePabort$/;"	l
+HANDLER	s3c2450_startup.S	/^HANDLER HandlerSWI, HandleSWI$/;"	l
+HANDLER	s3c2450_startup.S	/^HANDLER HandlerUndef, HandleUndef$/;"	l
+HBPD	Lcd.c	27;"	d	file:
+HBPD	Lcd_480x272.c	28;"	d	file:
+HCLK	option.h	18;"	d
+HEAPEND	option.h	13;"	d
+HFPD	Lcd.c	28;"	d	file:
+HFPD	Lcd_480x272.c	29;"	d	file:
+HOW_TO_RETURN	libs.S	/^HOW_TO_RETURN:$/;"	l
+HOZVAL	Lcd.c	21;"	d	file:
+HOZVAL	Lcd_480x272.c	20;"	d	file:
+HSPW	Lcd.c	29;"	d	file:
+HSPW	Lcd_480x272.c	30;"	d	file:
+HW_Initial	Main.c	/^void HW_Initial(void)$/;"	f
+HanTable	fonts/HANTABLE.H	/^const unsigned char HanTable[]={ $/;"	v
+Handle2D	s3c2450_startup.S	/^Handle2D:			.long	(_ISR_STARTADDRESS + 0xA0)$/;"	l
+HandleADC	s3c2450_startup.S	/^HandleADC:		.long	(_ISR_STARTADDRESS + 0x9c)$/;"	l
+HandleBATFLT	s3c2450_startup.S	/^HandleBATFLT:		.long	(_ISR_STARTADDRESS + 0x3c)$/;"	l
+HandleCAM	s3c2450_startup.S	/^HandleCAM:		.long	(_ISR_STARTADDRESS + 0x38)$/;"	l
+HandleCFCON	s3c2450_startup.S	/^HandleCFCON:		.long	(_ISR_STARTADDRESS + 0x6c)$/;"	l
+HandleDMA	s3c2450_startup.S	/^HandleDMA:		.long	(_ISR_STARTADDRESS + 0x64)$/;"	l
+HandleDabort	s3c2450_startup.S	/^HandleDabort:		.long   (_ISR_STARTADDRESS + 0x10)$/;"	l
+HandleEINT0	s3c2450_startup.S	/^HandleEINT0:		.long	(_ISR_STARTADDRESS + 0x20)$/;"	l
+HandleEINT1	s3c2450_startup.S	/^HandleEINT1:		.long	(_ISR_STARTADDRESS + 0x24)$/;"	l
+HandleEINT2	s3c2450_startup.S	/^HandleEINT2:		.long	(_ISR_STARTADDRESS + 0x28)$/;"	l
+HandleEINT3	s3c2450_startup.S	/^HandleEINT3:		.long	(_ISR_STARTADDRESS + 0x2c)$/;"	l
+HandleEINT4_7	s3c2450_startup.S	/^HandleEINT4_7:	.long	(_ISR_STARTADDRESS + 0x30)$/;"	l
+HandleEINT8_23	s3c2450_startup.S	/^HandleEINT8_23:	.long	(_ISR_STARTADDRESS + 0x34)$/;"	l
+HandleFIQ	s3c2450_startup.S	/^HandleFIQ:			.long   (_ISR_STARTADDRESS + 0x1c)$/;"	l
+HandleI2S0	s3c2450_startup.S	/^HandleI2S0:		.long	(_ISR_STARTADDRESS + 0xB8)$/;"	l
+HandleI2S1	s3c2450_startup.S	/^HandleI2S1:		.long	(_ISR_STARTADDRESS + 0xBc)$/;"	l
+HandleIIC	s3c2450_startup.S	/^HandleIIC:			.long	(_ISR_STARTADDRESS + 0x8c)$/;"	l
+HandleIIC1	s3c2450_startup.S	/^HandleIIC1:			.long	(_ISR_STARTADDRESS + 0xA4)$/;"	l
+HandleIRQ	s3c2450_startup.S	/^HandleIRQ:			.long   (_ISR_STARTADDRESS + 0x18)$/;"	l
+HandleLCD	s3c2450_startup.S	/^HandleLCD:		.long	(_ISR_STARTADDRESS + 0x60)$/;"	l
+HandleNFCON	s3c2450_startup.S	/^HandleNFCON:		.long	(_ISR_STARTADDRESS + 0x80)$/;"	l
+HandlePCM0	s3c2450_startup.S	/^HandlePCM0:		.long	(_ISR_STARTADDRESS + 0xB0)$/;"	l
+HandlePCM1	s3c2450_startup.S	/^HandlePCM1:		.long	(_ISR_STARTADDRESS + 0xB4)$/;"	l
+HandlePabort	s3c2450_startup.S	/^HandlePabort:		.long   (_ISR_STARTADDRESS + 0xc)$/;"	l
+HandleRSV1	s3c2450_startup.S	/^HandleRSV1:		.long	(_ISR_STARTADDRESS + 0xA8)$/;"	l
+HandleRSV2	s3c2450_startup.S	/^HandleRSV2:		.long	(_ISR_STARTADDRESS + 0xAc)$/;"	l
+HandleRTC	s3c2450_startup.S	/^HandleRTC:		.long	(_ISR_STARTADDRESS + 0x98)$/;"	l
+HandleReserved	s3c2450_startup.S	/^HandleReserved:	.long   (_ISR_STARTADDRESS + 0x14)$/;"	l
+HandleReset	s3c2450_startup.S	/^HandleReset:		.long   (_ISR_STARTADDRESS + 0x0)$/;"	l
+HandleSDI0	s3c2450_startup.S	/^HandleSDI0:		.long	(_ISR_STARTADDRESS + 0x74)$/;"	l
+HandleSDI1	s3c2450_startup.S	/^HandleSDI1:		.long	(_ISR_STARTADDRESS + 0x70)$/;"	l
+HandleSPI0	s3c2450_startup.S	/^HandleSPI0:		.long	(_ISR_STARTADDRESS + 0x78)$/;"	l
+HandleSPI1	s3c2450_startup.S	/^HandleSPI1:		.long	(_ISR_STARTADDRESS + 0x94)$/;"	l
+HandleSWI	s3c2450_startup.S	/^HandleSWI:			.long   (_ISR_STARTADDRESS + 0x8)$/;"	l
+HandleTICK	s3c2450_startup.S	/^HandleTICK:		.long	(_ISR_STARTADDRESS + 0x40)$/;"	l
+HandleTIMER0	s3c2450_startup.S	/^HandleTIMER0:		.long	(_ISR_STARTADDRESS + 0x48)$/;"	l
+HandleTIMER1	s3c2450_startup.S	/^HandleTIMER1:		.long	(_ISR_STARTADDRESS + 0x4c)$/;"	l
+HandleTIMER2	s3c2450_startup.S	/^HandleTIMER2:		.long	(_ISR_STARTADDRESS + 0x50)$/;"	l
+HandleTIMER3	s3c2450_startup.S	/^HandleTIMER3:		.long	(_ISR_STARTADDRESS + 0x54)$/;"	l
+HandleTIMER4	s3c2450_startup.S	/^HandleTIMER4:		.long	(_ISR_STARTADDRESS + 0x58)$/;"	l
+HandleUART0	s3c2450_startup.S	/^HandleUART0:		.long	(_ISR_STARTADDRESS + 0x90)$/;"	l
+HandleUART1	s3c2450_startup.S	/^HandleUART1:		.long	(_ISR_STARTADDRESS + 0x7c)$/;"	l
+HandleUART2	s3c2450_startup.S	/^HandleUART2:		.long	(_ISR_STARTADDRESS + 0x5c)$/;"	l
+HandleUART3	s3c2450_startup.S	/^HandleUART3:		.long	(_ISR_STARTADDRESS + 0x68)$/;"	l
+HandleUSBD	s3c2450_startup.S	/^HandleUSBD:		.long	(_ISR_STARTADDRESS + 0x84)$/;"	l
+HandleUSBH	s3c2450_startup.S	/^HandleUSBH:		.long	(_ISR_STARTADDRESS + 0x88)$/;"	l
+HandleUndef	s3c2450_startup.S	/^HandleUndef:		.long   (_ISR_STARTADDRESS + 0x4)$/;"	l
+HandleWDT	s3c2450_startup.S	/^HandleWDT:		.long	(_ISR_STARTADDRESS + 0x44)$/;"	l
+IISFIFO	2450addr.h	408;"	d
+IISFIFO	2450addr.h	410;"	d
+INCLUDE	Makefile	/^INCLUDE	=  -I$(TOPDIR) -I$(LIBCDIR)\/include -I$(LIBGCCDIR)\/include$/;"	m
+InitStacks	s3c2450_startup.S	/^InitStacks:$/;"	l
+Init_Key	Keypad.c	/^void Init_Key(void)$/;"	f
+IsrIRQ	s3c2450_startup.S	/^IsrIRQ: $/;"	l
+KHAKI	Main.c	43;"	d	file:
+Key_input	Keypad.c	/^unsigned char Key_input(void)$/;"	f
+LCD_SIZE_X	Lcd.c	18;"	d	file:
+LCD_SIZE_Y	Lcd.c	19;"	d	file:
+LCD_XSIZE	Lcd_480x272.c	14;"	d	file:
+LCD_XSIZE	Main.c	52;"	d	file:
+LCD_YSIZE	Lcd_480x272.c	15;"	d	file:
+LCD_YSIZE	Main.c	53;"	d	file:
+LD	Makefile	/^LD = $(TOOLPATH)\/bin\/arm-none-eabi-ld$/;"	m
+LDFLAGS	Makefile	/^LDFLAGS	= --cref -Bstatic -nostartfiles -T S3C2450-RAM.ld -Map 2450main.map$/;"	m
+LEFT	Main.c	65;"	d	file:
+LIBC	Makefile	/^LIBC =$(TOOLPATH)\/arm-none-eabi\/lib\/libc.a$/;"	m
+LIBCDIR	Makefile	/^LIBCDIR =$(TOOLPATH)\/arm-none-eabi\/lib$/;"	m
+LIBGCC	Makefile	/^LIBGCC = $(TOOLPATH)\/lib\/gcc\/arm-none-eabi\/4.5.2\/libgcc.a$/;"	m
+LIBGCCDIR	Makefile	/^LIBGCCDIR =$(TOOLPATH)\/lib\/gcc\/arm-none-eabi\/4.5.2$/;"	m
+LIBUART	Makefile	/^LIBUART =  $(MY_LIB_PATH)\/libUart1.a$/;"	m
+LINEVAL	Lcd.c	22;"	d	file:
+LINEVAL	Lcd_480x272.c	21;"	d	file:
+Lcd_Clr_Screen	Lcd_480x272.c	/^void Lcd_Clr_Screen(unsigned long color)$/;"	f
+Lcd_Copy	Lcd_480x272.c	/^void Lcd_Copy(unsigned from, unsigned int to)$/;"	f
+Lcd_Display_Frame_Buffer	Lcd_480x272.c	/^void Lcd_Display_Frame_Buffer(unsigned int id)$/;"	f
+Lcd_Draw_BMP	Lcd.c	/^void Lcd_Draw_BMP(int x, int y, const unsigned char *fp)$/;"	f
+Lcd_Draw_BMP	Lcd_480x272.c	/^void Lcd_Draw_BMP(int x, int y, const unsigned char *fp)$/;"	f
+Lcd_Eng_Putch	Lcd_480x272.c	/^void Lcd_Eng_Putch(int x,int y,int color,int bkcolor,int data, int zx, int zy)$/;"	f
+Lcd_Envid_On_Off	Lcd_480x272.c	/^void Lcd_Envid_On_Off(int onoff)$/;"	f
+Lcd_Fill_Rectangular	Lcd_480x272.c	/^void Lcd_Fill_Rectangular(int x1, int y1, int x2, int y2, int color)$/;"	f
+Lcd_Get_Info_BMP	Lcd_480x272.c	/^void Lcd_Get_Info_BMP(int * x, int  * y, const unsigned char *fp)$/;"	f
+Lcd_Han_Putch	Lcd_480x272.c	/^void Lcd_Han_Putch(int x,int y,int color,int bkcolor, int data, int zx, int zy)$/;"	f
+Lcd_Hline	Lcd_480x272.c	/^void Lcd_Hline(int y, int x1, int x2, int color)$/;"	f
+Lcd_Init	Lcd_480x272.c	/^void Lcd_Init(void)$/;"	f
+Lcd_Line	Lcd_480x272.c	/^void Lcd_Line(int x1,int y1,int x2,int y2,int color)$/;"	f
+Lcd_Port_Init	Lcd.c	/^void Lcd_Port_Init(void)$/;"	f
+Lcd_Port_Init	Lcd_480x272.c	/^void Lcd_Port_Init(void)$/;"	f
+Lcd_Power_Enable	Lcd_480x272.c	/^void Lcd_Power_Enable(int invpwren,int pwren)$/;"	f
+Lcd_Printf	Lcd_480x272.c	/^void Lcd_Printf(int x, int y, int color, int bkcolor, int zx, int zy, char *fmt,...)$/;"	f
+Lcd_Put_Pixel	Lcd_480x272.c	/^void Lcd_Put_Pixel(int x,int y,int color)$/;"	f
+Lcd_Put_Rvs_Pixel	Lcd_480x272.c	/^void Lcd_Put_Rvs_Pixel(int y,int x,int color)$/;"	f
+Lcd_Puts	Lcd_480x272.c	/^void Lcd_Puts(int x, int y, int color, int bkcolor, char *str, int zx, int zy)$/;"	f
+Lcd_Rectangular	Lcd_480x272.c	/^void Lcd_Rectangular(int x1, int y1, int x2, int y2, int color)$/;"	f
+Lcd_Select_Frame_Buffer	Lcd_480x272.c	/^void Lcd_Select_Frame_Buffer(unsigned int id)$/;"	f
+Lcd_Set_Address	Lcd_480x272.c	/^void Lcd_Set_Address(unsigned int fp)$/;"	f
+Lcd_Set_Tran_Mode	Lcd_480x272.c	/^void Lcd_Set_Tran_Mode(int mode)$/;"	f
+Lcd_Vline	Lcd_480x272.c	/^void Lcd_Vline(int x, int y1, int y2, int color)$/;"	f
+Lcd_Wait_Blank	Lcd_480x272.c	/^void Lcd_Wait_Blank(void)$/;"	f
+Led_Display	libc.c	/^void Led_Display(int data)$/;"	f
+Led_Port_Init	libc.c	/^void Led_Port_Init(void)$/;"	f
+M5D	Lcd_480x272.c	164;"	d	file:
+MAGENTA	Main.c	41;"	d	file:
+MEMCPY	libs.S	/^MEMCPY:$/;"	l
+MEMCPY_MULTIPLE	libs.S	/^MEMCPY_MULTIPLE:$/;"	l
+MEMCPY_SINGLE	libs.S	/^MEMCPY_SINGLE:$/;"	l
+MMU_CleanDCacheIndex	libs.S	/^MMU_CleanDCacheIndex:$/;"	l
+MMU_CleanDCacheMVA	libs.S	/^MMU_CleanDCacheMVA:$/;"	l
+MMU_CleanInvalidateDCacheIndex	libs.S	/^MMU_CleanInvalidateDCacheIndex:  $/;"	l
+MMU_CleanInvalidateDCacheMVA	libs.S	/^MMU_CleanInvalidateDCacheMVA:$/;"	l
+MMU_DisableAlignFault	libs.S	/^MMU_DisableAlignFault:$/;"	l
+MMU_DisableDCache	libs.S	/^MMU_DisableDCache:$/;"	l
+MMU_DisableICache	libs.S	/^MMU_DisableICache:$/;"	l
+MMU_DisableMMU	libs.S	/^MMU_DisableMMU:$/;"	l
+MMU_EnableAlignFault	libs.S	/^MMU_EnableAlignFault:$/;"	l
+MMU_EnableDCache	libs.S	/^MMU_EnableDCache:$/;"	l
+MMU_EnableICache	libs.S	/^MMU_EnableICache:$/;"	l
+MMU_EnableMMU	libs.S	/^MMU_EnableMMU:$/;"	l
+MMU_Init	libc.c	/^void MMU_Init(void)$/;"	f
+MMU_InvalidateDCache	libs.S	/^MMU_InvalidateDCache:$/;"	l
+MMU_InvalidateDCacheMVA	libs.S	/^MMU_InvalidateDCacheMVA:$/;"	l
+MMU_InvalidateDTLB	libs.S	/^MMU_InvalidateDTLB:$/;"	l
+MMU_InvalidateDTLBMVA	libs.S	/^MMU_InvalidateDTLBMVA:$/;"	l
+MMU_InvalidateICache	libs.S	/^MMU_InvalidateICache:$/;"	l
+MMU_InvalidateICacheMVA	libs.S	/^MMU_InvalidateICacheMVA:$/;"	l
+MMU_InvalidateIDCache	libs.S	/^MMU_InvalidateIDCache:$/;"	l
+MMU_InvalidateITLB	libs.S	/^MMU_InvalidateITLB:$/;"	l
+MMU_InvalidateITLBMVA	libs.S	/^MMU_InvalidateITLBMVA:$/;"	l
+MMU_InvalidateTLB	libs.S	/^MMU_InvalidateTLB:$/;"	l
+MMU_PrefetchICacheMVA	libs.S	/^MMU_PrefetchICacheMVA:$/;"	l
+MMU_SetAsyncBusMode	libs.S	/^MMU_SetAsyncBusMode:$/;"	l
+MMU_SetDCacheLockdownBase	libs.S	/^MMU_SetDCacheLockdownBase:$/;"	l
+MMU_SetDTLBLockdown	libs.S	/^MMU_SetDTLBLockdown:$/;"	l
+MMU_SetDomain	libs.S	/^MMU_SetDomain:$/;"	l
+MMU_SetFastBusMode	libs.S	/^MMU_SetFastBusMode:$/;"	l
+MMU_SetICacheLockdownBase	libs.S	/^MMU_SetICacheLockdownBase:$/;"	l
+MMU_SetITLBLockdown	libs.S	/^MMU_SetITLBLockdown:$/;"	l
+MMU_SetMTT	libc.c	/^void MMU_SetMTT(int vaddrStart,int vaddrEnd,int paddrStart,int attr)$/;"	f
+MMU_SetProcessId	libs.S	/^MMU_SetProcessId:$/;"	l
+MMU_SetTTBase	libs.S	/^MMU_SetTTBase:$/;"	l
+MMU_WaitForInterrupt	libs.S	/^MMU_WaitForInterrupt:$/;"	l
+MODE_TFT_16BIT	Lcd_480x272.c	13;"	d	file:
+MY_LIB_PATH	Makefile	/^MY_LIB_PATH = $(TOPDIR)\/Libraries$/;"	m
+Macro_Check_Bit_Clear	macro.h	14;"	d
+Macro_Check_Bit_Set	macro.h	15;"	d
+Macro_Clear_Bit	macro.h	11;"	d
+Macro_Erase_Area	macro.h	7;"	d
+Macro_Invert_Bit	macro.h	12;"	d
+Macro_Set_Bit	macro.h	10;"	d
+Macro_Write_Area	macro.h	8;"	d
+Main	Main.c	/^int Main(void)$/;"	f
+MemDump	libc.c	/^void MemDump(unsigned long ptr, int size)$/;"	f
+MemFill	libc.c	/^void MemFill(unsigned long ptr, unsigned long pattern, int size)$/;"	f
+NCB	option.h	28;"	d
+NCNB	option.h	29;"	d
+NFDATA	2450addr.h	141;"	d
+NULL	option.h	47;"	d
+NonPal_Fb	Lcd.c	31;"	d	file:
+NonPal_Lcd_Init	Lcd.c	/^void NonPal_Lcd_Init()$/;"	f
+NonPal_Put_Pixel	Lcd.c	/^void NonPal_Put_Pixel(int x, int y, int color)$/;"	f
+OBJCOPY	Makefile	/^OBJCOPY	= $(TOOLPATH)\/bin\/arm-none-eabi-objcopy$/;"	m
+OBJDUMP	Makefile	/^OBJDUMP	= $(TOOLPATH)\/bin\/arm-none-eabi-objdump$/;"	m
+OBJS	Makefile	/^OBJS	= ${SRCS:.c=.o} ${ASRCS:.S=.o}$/;"	m
+OCFLAGS	Makefile	/^OCFLAGS = -O binary -R .note -R .comment -S$/;"	m
+OLIVE	Main.c	44;"	d	file:
+OR	Lcd_480x272.c	35;"	d	file:
+ORANGE	Main.c	45;"	d	file:
+PCLK	option.h	19;"	d
+PINK	Main.c	46;"	d	file:
+PURPLE	Main.c	47;"	d	file:
+Pabort_Handler	exception.c	/^void Pabort_Handler(void)$/;"	f
+RED	Main.c	36;"	d	file:
+RIGHT	Main.c	66;"	d	file:
+ROTATE	Main.c	68;"	d	file:
+RUBBER_LEN	RUBBER.H	2;"	d
+RW_CB	option.h	42;"	d
+RW_CNB	option.h	43;"	d
+RW_FAULT	option.h	45;"	d
+RW_NCNB	option.h	44;"	d
+RdURXH0	2450addr.h	231;"	d
+RdURXH0	2450addr.h	253;"	d
+RdURXH1	2450addr.h	233;"	d
+RdURXH1	2450addr.h	255;"	d
+RdURXH2	2450addr.h	235;"	d
+RdURXH2	2450addr.h	257;"	d
+ResetHandler	s3c2450_startup.S	/^ResetHandler:$/;"	l
+Rotate_tetris	Main.c	/^void Rotate_tetris(signed char (*src)[4],unsigned char size, signed char *width, signed char *height)	\/* rotate tetromino *\/$/;"	f
+SCR_XSIZE	Lcd_480x272.c	17;"	d	file:
+SCR_YSIZE	Lcd_480x272.c	18;"	d	file:
+SDIDAT	2450addr.h	572;"	d
+SDIDAT	2450addr.h	575;"	d
+SET_IF	libs.S	/^SET_IF:$/;"	l
+SILVER	Main.c	48;"	d	file:
+SMRDATA	s3c2450_startup.S	/^SMRDATA:$/;"	l
+SRCS	Makefile	/^SRCS	= libc.c Main.c Uart.c Keypad.c timer.c exception.c Lcd_480x272.c touch.c$/;"	m
+SUM_OF_DEC	libs.S	/^SUM_OF_DEC:$/;"	l
+SWI_Handler	exception.c	/^void SWI_Handler(void)$/;"	f
+Show_Welcome	Main.c	/^void Show_Welcome(char * msg)$/;"	f
+TOOLPATH	Makefile	/^TOOLPATH = \/opt\/CodeSourcery\/Sourcery_G++_Lite$/;"	m
+TOPDIR	Makefile	/^TOPDIR =$(PWD)$/;"	m
+TRANSPARENT	Main.c	50;"	d	file:
+Timer0_Delay	timer.c	/^void Timer0_Delay(int msec)$/;"	f
+Timer0_Init	timer.c	/^void Timer0_Init(void)$/;"	f
+Touch_ISR	Main.c	/^void Touch_ISR()$/;"	f
+Touch_ISR_Enable	touch.c	/^void Touch_ISR_Enable(int enable)$/;"	f
+Touch_Init	touch.c	/^void Touch_Init(void)$/;"	f
+Touch_Isr_Init	touch.c	/^void Touch_Isr_Init(void (*fp)(void))$/;"	f
+Touch_config	Main.c	/^volatile unsigned int Touch_config=1;$/;"	v
+Touch_pressed	Main.c	/^volatile int Touch_pressed = 0;$/;"	v
+Touch_x	Main.c	/^volatile int Touch_x, Touch_y;$/;"	v
+Touch_y	Main.c	/^volatile int Touch_x, Touch_y;$/;"	v
+Trans_mode	Lcd_480x272.c	/^static int Trans_mode= 0;$/;"	v	file:
+URXH0	2450addr.h	238;"	d
+URXH0	2450addr.h	260;"	d
+URXH1	2450addr.h	240;"	d
+URXH1	2450addr.h	262;"	d
+URXH2	2450addr.h	242;"	d
+URXH2	2450addr.h	264;"	d
+UTXH0	2450addr.h	237;"	d
+UTXH0	2450addr.h	259;"	d
+UTXH1	2450addr.h	239;"	d
+UTXH1	2450addr.h	261;"	d
+UTXH2	2450addr.h	241;"	d
+UTXH2	2450addr.h	263;"	d
+Uart_GetChar	Uart.c	/^char Uart_GetChar(void)$/;"	f
+Uart_GetIntNum	Uart.c	/^int Uart_GetIntNum(void)$/;"	f
+Uart_GetKey	Uart.c	/^char Uart_GetKey(void)$/;"	f
+Uart_GetString	Uart.c	/^int Uart_GetString(char *string, int leng)$/;"	f
+Uart_Get_Pressed	Uart.c	/^char Uart_Get_Pressed(void)$/;"	f
+Uart_Init	Uart.c	/^void Uart_Init(int baud)$/;"	f
+Uart_Printf	Uart.c	/^void Uart_Printf(const char *fmt,...)$/;"	f
+Uart_Send_Byte	Uart.c	/^void Uart_Send_Byte(int data)$/;"	f
+Uart_Send_String	Uart.c	/^void Uart_Send_String(char *pt)$/;"	f
+Uart_TxEmpty	Uart.c	/^void Uart_TxEmpty(int ch)$/;"	f
+Undef_Handler	exception.c	/^void Undef_Handler(void) $/;"	f
+VBPD	Lcd.c	24;"	d	file:
+VBPD	Lcd_480x272.c	25;"	d	file:
+VFPD	Lcd.c	25;"	d	file:
+VFPD	Lcd_480x272.c	26;"	d	file:
+VIOLET	Main.c	49;"	d	file:
+VSPW	Lcd.c	26;"	d	file:
+VSPW	Lcd_480x272.c	27;"	d	file:
+WHITE	Main.c	34;"	d	file:
+WR_IF	libs.S	/^WR_IF: $/;"	l
+WrUTXH0	2450addr.h	230;"	d
+WrUTXH0	2450addr.h	252;"	d
+WrUTXH1	2450addr.h	232;"	d
+WrUTXH1	2450addr.h	254;"	d
+WrUTXH2	2450addr.h	234;"	d
+WrUTXH2	2450addr.h	256;"	d
+Xbase	Main.c	55;"	d	file:
+YELLOW	Main.c	39;"	d	file:
+Ybase	Main.c	56;"	d	file:
+_CMEMORY_STARTADDRESS	option.h	11;"	d
+_ISR_ENDADDRESS	option.h	9;"	d
+_ISR_STARTADDRESS	option.h	8;"	d
+_MMUTT_STARTADDRESS	option.h	12;"	d
+_MY_LIB_H_	my_lib.h	2;"	d
+_SDRAM_STARTADDRESS	option.h	7;"	d
+__2450ADDR_H__	2450addr.h	10;"	d
+__OPTION_H__	option.h	5;"	d
+__va_promote	stdarg.h	3;"	d
+_first	Lcd_480x272.c	/^static unsigned char _first[]={0,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19 };$/;"	v	file:
+_last	Lcd_480x272.c	/^static unsigned char _last[]={0,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,0,17,18,19,20,21,22,23,24,25,26,27};$/;"	v	file:
+_middle	Lcd_480x272.c	/^static unsigned char _middle[]={0,0,0,1,2,3,4,5,0,0,6,7,8,9,10,11,0,0,12,13,14,15,16,17,0,0,18,19,20,21};$/;"	v	file:
+_sbrk	s3c2450_startup.S	/^_sbrk:$/;"	l
+_start	s3c2450_startup.S	/^_start:$/;"	l
+abt_return	s3c2450_startup.S	/^abt_return: \/\/ no interrupt$/;"	l
+atoi	Uart.c	/^int atoi(char *str)$/;"	f
+bfOffbits	Lcd.c	/^static unsigned int bfOffbits;$/;"	v	file:
+bfOffbits	Lcd_480x272.c	/^static unsigned int bfOffbits;$/;"	v	file:
+bfSize	Lcd.c	/^static unsigned int bfSize;$/;"	v	file:
+bfSize	Lcd_480x272.c	/^static unsigned int bfSize;$/;"	v	file:
+bfType	Lcd.c	/^static unsigned short bfType;$/;"	v	file:
+bfType	Lcd_480x272.c	/^static unsigned short bfType;$/;"	v	file:
+biHeight	Lcd.c	/^static unsigned int biHeight;$/;"	v	file:
+biHeight	Lcd_480x272.c	/^static unsigned int biHeight;$/;"	v	file:
+biWidth	Lcd.c	/^static unsigned int biWidth, biWidth2;$/;"	v	file:
+biWidth	Lcd_480x272.c	/^static unsigned int biWidth, biWidth2;$/;"	v	file:
+biWidth2	Lcd.c	/^static unsigned int biWidth, biWidth2;$/;"	v	file:
+biWidth2	Lcd_480x272.c	/^static unsigned int biWidth, biWidth2;$/;"	v	file:
+block	Main.c	/^unsigned short block[2][12] = $/;"	v
+board	Main.c	/^signed char board[2][12] = { "333333333333",	\/\/ constant data for board outline$/;"	v
+cbi	tetris.h	21;"	d
+chk_off1	s3c2450_startup.S	/^ chk_off1:$/;"	l
+chk_off2	s3c2450_startup.S	/^ chk_off2:$/;"	l
+cho	Lcd_480x272.c	/^static unsigned char cho[]={0,0,0,0,0,0,0,0,0,1,3,3,3,1,2,4,4,4,2,1,3,0};$/;"	v	file:
+cho2	Lcd_480x272.c	/^static unsigned char cho2[]={0,5,5,5,5,5,5,5,5,6,7,7,7,6,6,7,7,7,6,6,7,5};$/;"	v	file:
+copy_loop_multi_word	libs.S	/^copy_loop_multi_word:$/;"	l
+copy_loop_multiple	libs.S	/^copy_loop_multiple:$/;"	l
+copy_loop_single	libs.S	/^copy_loop_single:$/;"	l
+copy_loop_single_byte	libs.S	/^copy_loop_single_byte:$/;"	l
+copy_loop_single_word	libs.S	/^copy_loop_single_word:$/;"	l
+down_press	Main.c	/^unsigned down_press = 0;$/;"	v
+end_off	s3c2450_startup.S	/^end_off: \/\/ generic interrupt$/;"	l
+eng8x16	fonts/ENG8X16.H	/^const unsigned char eng8x16[]={ $/;"	v
+free	libc.c	/^void free(void *pt)$/;"	f
+gcm_loop	libs.S	/^gcm_loop:$/;"	l
+han16x16	fonts/HAN16X16.H	/^const unsigned char han16x16[]={ $/;"	v
+jong	Lcd_480x272.c	/^static unsigned char jong[]={0,0,2,0,2,1,2,1,2,3,0,2,1,3,3,1,2,1,3,3,1,1};$/;"	v	file:
+left_press	Main.c	/^unsigned left_press = 0;$/;"	v
+malloc	libc.c	/^void * malloc(unsigned nbyte) $/;"	f
+mallocPt	libc.c	/^void *mallocPt=(void*)0x32000000;$/;"	v
+pISR_ADC	2450addr.h	620;"	d
+pISR_BAT_FLT	2450addr.h	596;"	d
+pISR_CAM	2450addr.h	595;"	d
+pISR_DABORT	2450addr.h	584;"	d
+pISR_DMA0	2450addr.h	606;"	d
+pISR_DMA1	2450addr.h	607;"	d
+pISR_DMA2	2450addr.h	608;"	d
+pISR_DMA3	2450addr.h	609;"	d
+pISR_EINT0	2450addr.h	589;"	d
+pISR_EINT1	2450addr.h	590;"	d
+pISR_EINT2	2450addr.h	591;"	d
+pISR_EINT3	2450addr.h	592;"	d
+pISR_EINT4_7	2450addr.h	593;"	d
+pISR_EINT8_23	2450addr.h	594;"	d
+pISR_FIQ	2450addr.h	587;"	d
+pISR_IIC	2450addr.h	616;"	d
+pISR_IRQ	2450addr.h	586;"	d
+pISR_LCD	2450addr.h	605;"	d
+pISR_NFCON	2450addr.h	613;"	d
+pISR_PABORT	2450addr.h	583;"	d
+pISR_RESERVED	2450addr.h	585;"	d
+pISR_RESET	2450addr.h	580;"	d
+pISR_RTC	2450addr.h	619;"	d
+pISR_SDI	2450addr.h	610;"	d
+pISR_SPI0	2450addr.h	611;"	d
+pISR_SPI1	2450addr.h	618;"	d
+pISR_SWI	2450addr.h	582;"	d
+pISR_TICK	2450addr.h	597;"	d
+pISR_TIMER0	2450addr.h	599;"	d
+pISR_TIMER1	2450addr.h	600;"	d
+pISR_TIMER2	2450addr.h	601;"	d
+pISR_TIMER3	2450addr.h	602;"	d
+pISR_TIMER4	2450addr.h	603;"	d
+pISR_UART0	2450addr.h	617;"	d
+pISR_UART1	2450addr.h	612;"	d
+pISR_UART2	2450addr.h	604;"	d
+pISR_UNDEF	2450addr.h	581;"	d
+pISR_USBD	2450addr.h	614;"	d
+pISR_USBH	2450addr.h	615;"	d
+pISR_WDT_AC97	2450addr.h	598;"	d
+rAC_CODEC_CMD	2450addr.h	417;"	d
+rAC_CODEC_STAT	2450addr.h	418;"	d
+rAC_GLBCTRL	2450addr.h	415;"	d
+rAC_GLBSTAT	2450addr.h	416;"	d
+rAC_MICADDR	2450addr.h	420;"	d
+rAC_MICDATA	2450addr.h	422;"	d
+rAC_PCMADDR	2450addr.h	419;"	d
+rAC_PCMDATA	2450addr.h	421;"	d
+rADCCON	2450addr.h	528;"	d
+rADCDAT0	2450addr.h	531;"	d
+rADCDAT1	2450addr.h	532;"	d
+rADCDLY	2450addr.h	530;"	d
+rADCTSC	2450addr.h	529;"	d
+rADCUPDN	2450addr.h	533;"	d
+rALMDATE	2450addr.h	494;"	d
+rALMDATE	2450addr.h	513;"	d
+rALMHOUR	2450addr.h	493;"	d
+rALMHOUR	2450addr.h	512;"	d
+rALMMIN	2450addr.h	492;"	d
+rALMMIN	2450addr.h	511;"	d
+rALMMON	2450addr.h	495;"	d
+rALMMON	2450addr.h	514;"	d
+rALMSEC	2450addr.h	491;"	d
+rALMSEC	2450addr.h	510;"	d
+rALMYEAR	2450addr.h	496;"	d
+rALMYEAR	2450addr.h	515;"	d
+rBANKCON0	2450addr.h	21;"	d
+rBANKCON1	2450addr.h	22;"	d
+rBANKCON2	2450addr.h	23;"	d
+rBANKCON3	2450addr.h	24;"	d
+rBANKCON4	2450addr.h	25;"	d
+rBANKCON5	2450addr.h	26;"	d
+rBANKCON6	2450addr.h	27;"	d
+rBANKCON7	2450addr.h	28;"	d
+rBANKSIZE	2450addr.h	30;"	d
+rBCDDATE	2450addr.h	501;"	d
+rBCDDATE	2450addr.h	520;"	d
+rBCDDAY	2450addr.h	502;"	d
+rBCDDAY	2450addr.h	521;"	d
+rBCDHOUR	2450addr.h	500;"	d
+rBCDHOUR	2450addr.h	519;"	d
+rBCDMIN	2450addr.h	499;"	d
+rBCDMIN	2450addr.h	518;"	d
+rBCDMON	2450addr.h	503;"	d
+rBCDMON	2450addr.h	522;"	d
+rBCDSEC	2450addr.h	498;"	d
+rBCDSEC	2450addr.h	517;"	d
+rBCDYEAR	2450addr.h	504;"	d
+rBCDYEAR	2450addr.h	523;"	d
+rBWSCON	2450addr.h	20;"	d
+rCAMDIVN	2450addr.h	87;"	d
+rCICOCBSA1	2450addr.h	163;"	d
+rCICOCBSA2	2450addr.h	164;"	d
+rCICOCBSA3	2450addr.h	165;"	d
+rCICOCBSA4	2450addr.h	166;"	d
+rCICOCRSA1	2450addr.h	167;"	d
+rCICOCRSA2	2450addr.h	168;"	d
+rCICOCRSA3	2450addr.h	169;"	d
+rCICOCRSA4	2450addr.h	170;"	d
+rCICOCTRL	2450addr.h	172;"	d
+rCICOSCCTRL	2450addr.h	175;"	d
+rCICOSCPREDST	2450addr.h	174;"	d
+rCICOSCPRERATIO	2450addr.h	173;"	d
+rCICOSTATUS	2450addr.h	177;"	d
+rCICOTAREA	2450addr.h	176;"	d
+rCICOTRGFMT	2450addr.h	171;"	d
+rCICOYSA1	2450addr.h	159;"	d
+rCICOYSA2	2450addr.h	160;"	d
+rCICOYSA3	2450addr.h	161;"	d
+rCICOYSA4	2450addr.h	162;"	d
+rCIGCTRL	2450addr.h	158;"	d
+rCIIMGCPT	2450addr.h	189;"	d
+rCIPRCLRSA1	2450addr.h	178;"	d
+rCIPRCLRSA2	2450addr.h	179;"	d
+rCIPRCLRSA3	2450addr.h	180;"	d
+rCIPRCLRSA4	2450addr.h	181;"	d
+rCIPRCTRL	2450addr.h	183;"	d
+rCIPRSCCTRL	2450addr.h	186;"	d
+rCIPRSCPREDST	2450addr.h	185;"	d
+rCIPRSCPRERATIO	2450addr.h	184;"	d
+rCIPRSTATUS	2450addr.h	188;"	d
+rCIPRTAREA	2450addr.h	187;"	d
+rCIPRTRGFMT	2450addr.h	182;"	d
+rCISRCFMT	2450addr.h	156;"	d
+rCIWDOFST	2450addr.h	157;"	d
+rCLKCON	2450addr.h	84;"	d
+rCLKDIVN	2450addr.h	86;"	d
+rCLKSLOW	2450addr.h	85;"	d
+rCPUTRIGCON2	2450addr.h	129;"	d
+rDCDST0	2450addr.h	65;"	d
+rDCDST1	2450addr.h	76;"	d
+rDCLKCON	2450addr.h	464;"	d
+rDCON0	2450addr.h	62;"	d
+rDCON1	2450addr.h	73;"	d
+rDCSRC0	2450addr.h	64;"	d
+rDCSRC1	2450addr.h	75;"	d
+rDIDST0	2450addr.h	60;"	d
+rDIDST1	2450addr.h	71;"	d
+rDIDSTC0	2450addr.h	61;"	d
+rDIDSTC1	2450addr.h	72;"	d
+rDISRC0	2450addr.h	58;"	d
+rDISRC1	2450addr.h	69;"	d
+rDISRCC0	2450addr.h	59;"	d
+rDISRCC1	2450addr.h	70;"	d
+rDITHMODE	2450addr.h	125;"	d
+rDMAREQSEL0	2450addr.h	67;"	d
+rDMAREQSEL1	2450addr.h	78;"	d
+rDMASKTRIG0	2450addr.h	66;"	d
+rDMASKTRIG1	2450addr.h	77;"	d
+rDSC0	2450addr.h	482;"	d
+rDSC1	2450addr.h	483;"	d
+rDSTAT0	2450addr.h	63;"	d
+rDSTAT1	2450addr.h	74;"	d
+rEINTFLT0	2450addr.h	468;"	d
+rEINTFLT1	2450addr.h	469;"	d
+rEINTFLT2	2450addr.h	470;"	d
+rEINTFLT3	2450addr.h	471;"	d
+rEINTMASK	2450addr.h	472;"	d
+rEINTPEND	2450addr.h	473;"	d
+rEP0_CSR	2450addr.h	301;"	d
+rEP0_CSR	2450addr.h	349;"	d
+rEP0_FIFO	2450addr.h	308;"	d
+rEP0_FIFO	2450addr.h	356;"	d
+rEP1_DMA_CON	2450addr.h	313;"	d
+rEP1_DMA_CON	2450addr.h	361;"	d
+rEP1_DMA_FIFO	2450addr.h	315;"	d
+rEP1_DMA_FIFO	2450addr.h	363;"	d
+rEP1_DMA_TTC_H	2450addr.h	318;"	d
+rEP1_DMA_TTC_H	2450addr.h	366;"	d
+rEP1_DMA_TTC_L	2450addr.h	316;"	d
+rEP1_DMA_TTC_L	2450addr.h	364;"	d
+rEP1_DMA_TTC_M	2450addr.h	317;"	d
+rEP1_DMA_TTC_M	2450addr.h	365;"	d
+rEP1_DMA_UNIT	2450addr.h	314;"	d
+rEP1_DMA_UNIT	2450addr.h	362;"	d
+rEP1_FIFO	2450addr.h	309;"	d
+rEP1_FIFO	2450addr.h	357;"	d
+rEP2_DMA_CON	2450addr.h	319;"	d
+rEP2_DMA_CON	2450addr.h	367;"	d
+rEP2_DMA_FIFO	2450addr.h	321;"	d
+rEP2_DMA_FIFO	2450addr.h	369;"	d
+rEP2_DMA_TTC_H	2450addr.h	324;"	d
+rEP2_DMA_TTC_H	2450addr.h	372;"	d
+rEP2_DMA_TTC_L	2450addr.h	322;"	d
+rEP2_DMA_TTC_L	2450addr.h	370;"	d
+rEP2_DMA_TTC_M	2450addr.h	323;"	d
+rEP2_DMA_TTC_M	2450addr.h	371;"	d
+rEP2_DMA_UNIT	2450addr.h	320;"	d
+rEP2_DMA_UNIT	2450addr.h	368;"	d
+rEP2_FIFO	2450addr.h	310;"	d
+rEP2_FIFO	2450addr.h	358;"	d
+rEP3_DMA_CON	2450addr.h	325;"	d
+rEP3_DMA_CON	2450addr.h	373;"	d
+rEP3_DMA_FIFO	2450addr.h	327;"	d
+rEP3_DMA_FIFO	2450addr.h	375;"	d
+rEP3_DMA_TTC_H	2450addr.h	330;"	d
+rEP3_DMA_TTC_H	2450addr.h	378;"	d
+rEP3_DMA_TTC_L	2450addr.h	328;"	d
+rEP3_DMA_TTC_L	2450addr.h	376;"	d
+rEP3_DMA_TTC_M	2450addr.h	329;"	d
+rEP3_DMA_TTC_M	2450addr.h	377;"	d
+rEP3_DMA_UNIT	2450addr.h	326;"	d
+rEP3_DMA_UNIT	2450addr.h	374;"	d
+rEP3_FIFO	2450addr.h	311;"	d
+rEP3_FIFO	2450addr.h	359;"	d
+rEP4_DMA_CON	2450addr.h	331;"	d
+rEP4_DMA_CON	2450addr.h	379;"	d
+rEP4_DMA_FIFO	2450addr.h	333;"	d
+rEP4_DMA_FIFO	2450addr.h	381;"	d
+rEP4_DMA_TTC_H	2450addr.h	336;"	d
+rEP4_DMA_TTC_H	2450addr.h	384;"	d
+rEP4_DMA_TTC_L	2450addr.h	334;"	d
+rEP4_DMA_TTC_L	2450addr.h	382;"	d
+rEP4_DMA_TTC_M	2450addr.h	335;"	d
+rEP4_DMA_TTC_M	2450addr.h	383;"	d
+rEP4_DMA_UNIT	2450addr.h	332;"	d
+rEP4_DMA_UNIT	2450addr.h	380;"	d
+rEP4_FIFO	2450addr.h	312;"	d
+rEP4_FIFO	2450addr.h	360;"	d
+rEP_INT_EN_REG	2450addr.h	295;"	d
+rEP_INT_EN_REG	2450addr.h	343;"	d
+rEP_INT_REG	2450addr.h	293;"	d
+rEP_INT_REG	2450addr.h	341;"	d
+rEXTINT0	2450addr.h	465;"	d
+rEXTINT1	2450addr.h	466;"	d
+rEXTINT2	2450addr.h	467;"	d
+rFLTOUT	2450addr.h	481;"	d
+rFRAME_NUM1_REG	2450addr.h	297;"	d
+rFRAME_NUM1_REG	2450addr.h	345;"	d
+rFRAME_NUM2_REG	2450addr.h	298;"	d
+rFRAME_NUM2_REG	2450addr.h	346;"	d
+rFUNC_ADDR_REG	2450addr.h	291;"	d
+rFUNC_ADDR_REG	2450addr.h	339;"	d
+rGPACON	2450addr.h	428;"	d
+rGPADAT	2450addr.h	429;"	d
+rGPBCON	2450addr.h	431;"	d
+rGPBDAT	2450addr.h	432;"	d
+rGPBUDP	2450addr.h	433;"	d
+rGPCCON	2450addr.h	435;"	d
+rGPCDAT	2450addr.h	436;"	d
+rGPCUDP	2450addr.h	437;"	d
+rGPDCON	2450addr.h	439;"	d
+rGPDDAT	2450addr.h	440;"	d
+rGPDUDP	2450addr.h	441;"	d
+rGPECON	2450addr.h	443;"	d
+rGPEDAT	2450addr.h	444;"	d
+rGPEUDP	2450addr.h	445;"	d
+rGPFCON	2450addr.h	447;"	d
+rGPFDAT	2450addr.h	448;"	d
+rGPFUDP	2450addr.h	449;"	d
+rGPGCON	2450addr.h	451;"	d
+rGPGDAT	2450addr.h	452;"	d
+rGPGUDP	2450addr.h	453;"	d
+rGPHCON	2450addr.h	455;"	d
+rGPHDAT	2450addr.h	456;"	d
+rGPHUDP	2450addr.h	457;"	d
+rGPJCON	2450addr.h	459;"	d
+rGPJDAT	2450addr.h	460;"	d
+rGPJUDP	2450addr.h	461;"	d
+rGSTATUS0	2450addr.h	474;"	d
+rGSTATUS1	2450addr.h	475;"	d
+rGSTATUS2	2450addr.h	476;"	d
+rGSTATUS3	2450addr.h	477;"	d
+rGSTATUS4	2450addr.h	478;"	d
+rIICADD	2450addr.h	397;"	d
+rIICCON	2450addr.h	395;"	d
+rIICDS	2450addr.h	398;"	d
+rIICLC	2450addr.h	399;"	d
+rIICSTAT	2450addr.h	396;"	d
+rIISCON	2450addr.h	403;"	d
+rIISFCON	2450addr.h	406;"	d
+rIISMOD	2450addr.h	404;"	d
+rIISPSR	2450addr.h	405;"	d
+rINDEX_REG	2450addr.h	299;"	d
+rINDEX_REG	2450addr.h	347;"	d
+rINTMOD1	2450addr.h	40;"	d
+rINTMOD2	2450addr.h	49;"	d
+rINTMSK1	2450addr.h	41;"	d
+rINTMSK2	2450addr.h	50;"	d
+rINTOFFSET1	2450addr.h	43;"	d
+rINTOFFSET2	2450addr.h	52;"	d
+rINTPND1	2450addr.h	42;"	d
+rINTPND2	2450addr.h	51;"	d
+rINTSUBMSK	2450addr.h	45;"	d
+rIN_CSR1_REG	2450addr.h	302;"	d
+rIN_CSR1_REG	2450addr.h	350;"	d
+rIN_CSR2_REG	2450addr.h	303;"	d
+rIN_CSR2_REG	2450addr.h	351;"	d
+rLOCKTIME	2450addr.h	81;"	d
+rMAXP_REG	2450addr.h	300;"	d
+rMAXP_REG	2450addr.h	348;"	d
+rMISCCR	2450addr.h	463;"	d
+rMPLLCON	2450addr.h	82;"	d
+rMRSRB6	2450addr.h	31;"	d
+rMRSRB7	2450addr.h	32;"	d
+rMSLCON	2450addr.h	484;"	d
+rNFADDR	2450addr.h	138;"	d
+rNFCMD	2450addr.h	137;"	d
+rNFCONF	2450addr.h	135;"	d
+rNFCONT	2450addr.h	136;"	d
+rNFDATA	2450addr.h	139;"	d
+rNFDATA8	2450addr.h	140;"	d
+rNFEBLK	2450addr.h	152;"	d
+rNFESTAT0	2450addr.h	146;"	d
+rNFESTAT1	2450addr.h	147;"	d
+rNFMECC0	2450addr.h	148;"	d
+rNFMECC1	2450addr.h	149;"	d
+rNFMECCD0	2450addr.h	142;"	d
+rNFMECCD1	2450addr.h	143;"	d
+rNFSBLK	2450addr.h	151;"	d
+rNFSECC	2450addr.h	150;"	d
+rNFSECCD	2450addr.h	144;"	d
+rNFSTAT	2450addr.h	145;"	d
+rOUT_CSR1_REG	2450addr.h	304;"	d
+rOUT_CSR1_REG	2450addr.h	352;"	d
+rOUT_CSR2_REG	2450addr.h	305;"	d
+rOUT_CSR2_REG	2450addr.h	353;"	d
+rOUT_FIFO_CNT1_REG	2450addr.h	306;"	d
+rOUT_FIFO_CNT1_REG	2450addr.h	354;"	d
+rOUT_FIFO_CNT2_REG	2450addr.h	307;"	d
+rOUT_FIFO_CNT2_REG	2450addr.h	355;"	d
+rPRIORITY_MODE	2450addr.h	46;"	d
+rPRIORITY_MODE2	2450addr.h	53;"	d
+rPRIORITY_UPDATE1	2450addr.h	47;"	d
+rPRIORITY_UPDATE2	2450addr.h	54;"	d
+rPWR_REG	2450addr.h	292;"	d
+rPWR_REG	2450addr.h	340;"	d
+rREFRESH	2450addr.h	29;"	d
+rRTCALM	2450addr.h	490;"	d
+rRTCALM	2450addr.h	509;"	d
+rRTCCON	2450addr.h	488;"	d
+rRTCCON	2450addr.h	507;"	d
+rRTCRST	2450addr.h	497;"	d
+rRTCRST	2450addr.h	516;"	d
+rSDIBSIZE	2450addr.h	563;"	d
+rSDICARG	2450addr.h	555;"	d
+rSDICCON	2450addr.h	556;"	d
+rSDICON	2450addr.h	553;"	d
+rSDICSTA	2450addr.h	557;"	d
+rSDIDAT	2450addr.h	571;"	d
+rSDIDAT	2450addr.h	574;"	d
+rSDIDCNT	2450addr.h	565;"	d
+rSDIDCON	2450addr.h	564;"	d
+rSDIDSTA	2450addr.h	566;"	d
+rSDIDTIMER	2450addr.h	562;"	d
+rSDIFSTA	2450addr.h	567;"	d
+rSDIIMSK	2450addr.h	568;"	d
+rSDIPRE	2450addr.h	554;"	d
+rSDIRSP0	2450addr.h	558;"	d
+rSDIRSP1	2450addr.h	559;"	d
+rSDIRSP2	2450addr.h	560;"	d
+rSDIRSP3	2450addr.h	561;"	d
+rSIFCCON0	2450addr.h	126;"	d
+rSIFCCON1	2450addr.h	127;"	d
+rSIFCCON2	2450addr.h	128;"	d
+rSPCON0	2450addr.h	537;"	d
+rSPCON1	2450addr.h	544;"	d
+rSPPIN0	2450addr.h	539;"	d
+rSPPIN1	2450addr.h	546;"	d
+rSPPRE0	2450addr.h	540;"	d
+rSPPRE1	2450addr.h	547;"	d
+rSPRDAT0	2450addr.h	542;"	d
+rSPRDAT1	2450addr.h	549;"	d
+rSPSTA0	2450addr.h	538;"	d
+rSPSTA1	2450addr.h	545;"	d
+rSPTDAT0	2450addr.h	541;"	d
+rSPTDAT1	2450addr.h	548;"	d
+rSRCPND1	2450addr.h	39;"	d
+rSRCPND2	2450addr.h	48;"	d
+rSUBSRCPND	2450addr.h	44;"	d
+rSYSIFCON0	2450addr.h	123;"	d
+rSYSIFCON1	2450addr.h	124;"	d
+rTCFG0	2450addr.h	269;"	d
+rTCFG1	2450addr.h	270;"	d
+rTCMPB0	2450addr.h	273;"	d
+rTCMPB1	2450addr.h	276;"	d
+rTCMPB2	2450addr.h	279;"	d
+rTCMPB3	2450addr.h	282;"	d
+rTCNTB0	2450addr.h	272;"	d
+rTCNTB1	2450addr.h	275;"	d
+rTCNTB2	2450addr.h	278;"	d
+rTCNTB3	2450addr.h	281;"	d
+rTCNTB4	2450addr.h	284;"	d
+rTCNTO0	2450addr.h	274;"	d
+rTCNTO1	2450addr.h	277;"	d
+rTCNTO2	2450addr.h	280;"	d
+rTCNTO3	2450addr.h	283;"	d
+rTCNTO4	2450addr.h	285;"	d
+rTCON	2450addr.h	271;"	d
+rTICNT	2450addr.h	489;"	d
+rTICNT	2450addr.h	508;"	d
+rUBRDIV0	2450addr.h	201;"	d
+rUBRDIV1	2450addr.h	211;"	d
+rUBRDIV2	2450addr.h	220;"	d
+rUCON0	2450addr.h	194;"	d
+rUCON1	2450addr.h	204;"	d
+rUCON2	2450addr.h	213;"	d
+rUERSTAT0	2450addr.h	198;"	d
+rUERSTAT1	2450addr.h	208;"	d
+rUERSTAT2	2450addr.h	217;"	d
+rUFCON0	2450addr.h	195;"	d
+rUFCON1	2450addr.h	205;"	d
+rUFCON2	2450addr.h	214;"	d
+rUFSTAT0	2450addr.h	199;"	d
+rUFSTAT1	2450addr.h	209;"	d
+rUFSTAT2	2450addr.h	218;"	d
+rULCON0	2450addr.h	193;"	d
+rULCON1	2450addr.h	203;"	d
+rULCON2	2450addr.h	212;"	d
+rUMCON0	2450addr.h	196;"	d
+rUMCON1	2450addr.h	206;"	d
+rUMCON2	2450addr.h	215;"	d
+rUMSTAT0	2450addr.h	200;"	d
+rUMSTAT1	2450addr.h	210;"	d
+rUMSTAT2	2450addr.h	219;"	d
+rUPLLCON	2450addr.h	83;"	d
+rURXH0	2450addr.h	224;"	d
+rURXH0	2450addr.h	246;"	d
+rURXH1	2450addr.h	226;"	d
+rURXH1	2450addr.h	248;"	d
+rURXH2	2450addr.h	228;"	d
+rURXH2	2450addr.h	250;"	d
+rUSB_INT_EN_REG	2450addr.h	296;"	d
+rUSB_INT_EN_REG	2450addr.h	344;"	d
+rUSB_INT_REG	2450addr.h	294;"	d
+rUSB_INT_REG	2450addr.h	342;"	d
+rUTRSTAT0	2450addr.h	197;"	d
+rUTRSTAT1	2450addr.h	207;"	d
+rUTRSTAT2	2450addr.h	216;"	d
+rUTXH0	2450addr.h	223;"	d
+rUTXH0	2450addr.h	245;"	d
+rUTXH1	2450addr.h	225;"	d
+rUTXH1	2450addr.h	247;"	d
+rUTXH2	2450addr.h	227;"	d
+rUTXH2	2450addr.h	249;"	d
+rVIDCON0	2450addr.h	90;"	d
+rVIDCON1	2450addr.h	91;"	d
+rVIDINTCON	2450addr.h	111;"	d
+rVIDOSD0A	2450addr.h	97;"	d
+rVIDOSD0B	2450addr.h	98;"	d
+rVIDOSD1A	2450addr.h	99;"	d
+rVIDOSD1B	2450addr.h	100;"	d
+rVIDOSD1C	2450addr.h	101;"	d
+rVIDTCON0	2450addr.h	92;"	d
+rVIDTCON1	2450addr.h	93;"	d
+rVIDTCON2	2450addr.h	94;"	d
+rVIDW00ADD0B0	2450addr.h	102;"	d
+rVIDW00ADD0B1	2450addr.h	103;"	d
+rVIDW00ADD1B0	2450addr.h	105;"	d
+rVIDW00ADD1B1	2450addr.h	106;"	d
+rVIDW00ADD2B0	2450addr.h	108;"	d
+rVIDW00ADD2B1	2450addr.h	109;"	d
+rVIDW01ADD0	2450addr.h	104;"	d
+rVIDW01ADD1	2450addr.h	107;"	d
+rVIDW01ADD2	2450addr.h	110;"	d
+rW1KEYCON0	2450addr.h	112;"	d
+rW1KEYCON1	2450addr.h	113;"	d
+rW2KEYCON0	2450addr.h	114;"	d
+rW2KEYCON1	2450addr.h	115;"	d
+rW3KEYCON0	2450addr.h	116;"	d
+rW3KEYCON1	2450addr.h	117;"	d
+rW4KEYCON0	2450addr.h	118;"	d
+rW4KEYCON1	2450addr.h	119;"	d
+rWIN0	2450addr.h	130;"	d
+rWIN0MAP	2450addr.h	120;"	d
+rWIN1	2450addr.h	131;"	d
+rWIN1MAP	2450addr.h	121;"	d
+rWINCON0	2450addr.h	95;"	d
+rWINCON1	2450addr.h	96;"	d
+rWPALCON	2450addr.h	122;"	d
+rWTCNT	2450addr.h	391;"	d
+rWTCON	2450addr.h	389;"	d
+rWTDAT	2450addr.h	390;"	d
+right_press	Main.c	/^unsigned right_press = 0;$/;"	v
+rotate_press	Main.c	/^unsigned rotate_press = 0;$/;"	v
+rubber	RUBBER.H	/^ static unsigned char rubber[]=$/;"	v
+sbi	tetris.h	22;"	d
+screen	Main.c	/^signed char screen[20][10];			\/\/ game screen data$/;"	v
+start_timer0	libc.c	/^void start_timer0(void)$/;"	f
+stop_timer0	libc.c	/^void stop_timer0(void)$/;"	f
+strlen	Uart.c	/^int strlen(const char *str)$/;"	f
+sum_loop	libs.S	/^sum_loop:$/;"	l
+tetris	Main.c	/^signed char tetris[7][4][4] = {			\/* define tetromino *\/$/;"	v
+time	libc.c	/^int time (void)$/;"	f
+touch_key	Main.c	/^unsigned int touch_key = -1;$/;"	v
+va_arg	stdarg.h	5;"	d
+va_end	stdarg.h	6;"	d
+va_list	stdarg.h	/^typedef char *va_list;$/;"	t
+va_start	stdarg.h	4;"	d
