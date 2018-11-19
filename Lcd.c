@@ -11,6 +11,7 @@
  * =====================================================================
  */
 
+#if 0
 #include "2450addr.h"
 #include "my_lib.h"
 #include "option.h"
@@ -135,5 +136,8 @@ void Lcd_Draw_BMP(int x, int y, const unsigned char *fp)
              if(xx<biWidth2) NonPal_Put_Pixel(x+xx,y+yy,(tmpR<<10)+(tmpG<<5)+(tmpB<<0));
          } 
      }
+
+	 Uart_Printf("%s\n"__FILE__);
     
 }
+#endif
