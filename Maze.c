@@ -5,6 +5,7 @@
 #include "option.h"
 
 #include "My_lib.h"
+#include "images.h"
 
 #define DEBUG_MAZE
 
@@ -14,21 +15,43 @@ typedef struct
 	int y;
 } STRUCT_FRONTIER;
 
+typedef struct
+{
+	int start_x;
+	int start_y;
+	int dest_x;
+	int dest_y;
+} STRUCT_POSITION;
+
 #define NORTH 0x01
 #define SOUTH 0x02
 #define EAST 0x04
 #define WEST 0x08
 
+#define MAZE_START_X 80
+#define MAZE_START_Y 70
+
+#define MAZE_BLOCK_WIDTH	30
+#define MAZE_BLOCK_HEIGHT	28
+
+//maze init
 void add_frontier(int x, int y, int** maze_board, STRUCT_FRONTIER* frontier);
 void delete_frontier(int len, STRUCT_FRONTIER *save_frontier);
 void mark(int x, int y, int ** maze_board, STRUCT_FRONTIER* frontier);
 void neighbors(int x, int y, int ** maze_board);
 int direction(int fx, int fy, int tx, int ty);
 int opposite_direction(int direction);
+
+//display
 void maze_init();
+void display_maze_info(int **maze_board);
+
+//character
+void maze_set_startposition(int x, int y);
+void maze_set_destposition(int x, int y);
 
 #ifdef DEBUG_MAZE
-void printf_maze_direction(int max_height,int max_width,int **maze_board);
+void printf_maze_direction(int **maze_board);
 #endif
 
 
@@ -44,9 +67,10 @@ int neighbor_count;
 int w = MAZE_WIDTH;
 int h = MAZE_HEIGHT;
 
-
 STRUCT_FRONTIER stFrontier[MAZE_WIDTH*MAZE_HEIGHT];
 STRUCT_FRONTIER stNeighbors[4];
+
+STRUCT_POSITION stCharacter_Position;	
 
 int** maze_board;
 
@@ -63,6 +87,7 @@ void Maze_Debug_Printf(const char * fmt,...)
 #endif
 }
 
+//maze init
 void add_frontier(int x, int y, int ** maze_board, STRUCT_FRONTIER *frontier)
 {
 	if ((x >= 0) && (y >= 0) && (x < w) && (y < h) && (maze_board[y][x] == 0))
@@ -88,7 +113,6 @@ void delete_frontier(int len, STRUCT_FRONTIER* save_frontier)
 
 	frontier_count--;
 }
-
 
 void mark(int x, int y, int ** maze_board, STRUCT_FRONTIER* frontier)
 {
@@ -215,13 +239,13 @@ void make_maze() {
 	int nx, ny;
 	int dir;
 	int dir_opposite;
-	int cnt = 0;
 	
 	STRUCT_FRONTIER temp_frontier;
 	
 	x = rand()%5;
 	y = rand()%5;
-	
+
+	maze_set_startposition(x,y);
     maze_init();
 	
 	mark(x,y,maze_board, &stFrontier[0]);
@@ -247,11 +271,10 @@ void make_maze() {
 		maze_board[ny][nx] |= dir_opposite;
 
 		mark(x,y,maze_board, &stFrontier[0]);
-		cnt++;
 	}
 
 #ifdef DEBUG_MAZE
-	printf_maze_direction(MAZE_HEIGHT,MAZE_WIDTH,maze_board);
+	printf_maze_direction(maze_board);
 #endif
 }
 
@@ -273,13 +296,13 @@ void maze_init() {
 }
 
 #ifdef DEBUG_MAZE
-void printf_maze_direction(int max_height,int max_width,int **maze_board)
+void printf_maze_direction(int **maze_board)
 {
 	int i,j;
 	
-	for(i=0;i<max_height;i++)
+	for(i=0;i<MAZE_HEIGHT;i++)
 	{
-		for(j=0;j<max_width;j++)
+		for(j=0;j<MAZE_WIDTH;j++)
 		{
 			Maze_Debug_Printf("[%d][%d] = 0x%x\n",i,j,(maze_board[i][j] % 0xF));
 		}
@@ -287,4 +310,56 @@ void printf_maze_direction(int max_height,int max_width,int **maze_board)
 }
 #endif
 
-//void display_maze(
+//display
+void display_maze(void)
+{
+	display_maze_info(maze_board);
+}
+
+void display_maze_info(int **maze_board)
+{
+	int i,j;
+	
+	Lcd_Select_Frame_Buffer(0);
+
+	for(i=0;i<MAZE_HEIGHT;i++)
+	{
+		for(j=0;j<MAZE_WIDTH;j++)
+		{
+			if ((maze_board[i][j] & WEST) == 0)
+			{
+				Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * j),MAZE_START_Y+(MAZE_BLOCK_HEIGHT * i),wall2);
+			}
+
+			if ((maze_board[i][j] & EAST) == 0)
+			{
+				Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * j)+MAZE_BLOCK_WIDTH,MAZE_START_Y+(MAZE_BLOCK_HEIGHT * i),wall2);
+			}
+
+			if ((maze_board[i][j] & NORTH) == 0)
+			{
+				Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * j),MAZE_START_Y+(MAZE_BLOCK_HEIGHT * i),wall);
+			}
+
+			if ((maze_board[i][j] & SOUTH) == 0)
+			{
+				Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * j),MAZE_START_Y+(MAZE_BLOCK_HEIGHT * i)+MAZE_BLOCK_HEIGHT,wall);
+			}
+		}
+	}
+
+	Lcd_Display_Frame_Buffer(0);
+}
+
+//characeter
+void maze_set_startposition(int x, int y)
+{
+	stCharacter_Position.start_x = x;
+	stCharacter_Position.start_y = y;
+}
+
+void maze_set_destposition(int x, int y)
+{
+	stCharacter_Position.dest_x = x;
+	stCharacter_Position.dest_y = y;
+}

@@ -57,6 +57,7 @@ void Lcd_Draw_BMP(int x, int y, const unsigned char *fp);
 
 //Maze
 void make_maze();
+void display_maze(void);
 
 // MMU.c
 void MMU_Init(void);
