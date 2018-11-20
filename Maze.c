@@ -43,16 +43,19 @@ typedef struct
 int common_rand();
 
 static unsigned long int next = 1;
-static unsigned long int tick;
 
-void common_srand(void)
+void common_rand_seed(void)
 {
-	next = (*(volatile unsigned long int *)0x57000090);
+	unsigned long int tick_cnt;
+
+	tick_cnt = (*(volatile unsigned long int *)0x57000090);
+
+	next = next + tick_cnt;
 }
 
 int common_rand()
 {
-	common_srand();
+	common_rand_seed();
 	next = next * 1103515245 + 12345;
 	return (unsigned int) (next/65536) % 32768;	
 }
@@ -78,6 +81,7 @@ void maze_init();
 void display_maze_info(int **maze_board);
 
 //character
+void maze_find_one_direction(int **maze_board);
 void maze_set_startposition(int x, int y);
 void maze_set_destposition(int x, int y);
 
@@ -285,6 +289,7 @@ void make_maze() {
 #endif
 
 	maze_set_startposition(x,y);
+	
     maze_init();
 	
 	mark(x,y,maze_board, &stFrontier[0]);
@@ -320,9 +325,10 @@ void make_maze() {
 
 		mark(x,y,maze_board, &stFrontier[0]);
 
-		Maze_Debug_Printf("[%d][%d]=0x%x [%d][%d]=0x%x\n",x,y,dir,nx,ny,dir_opposite);
+		//Maze_Debug_Printf("[%d][%d]=0x%x [%d][%d]=0x%x\n",x,y,dir,nx,ny,dir_opposite);
 	}
 
+	maze_find_one_direction(maze_board);
 #ifdef DEBUG_MAZE
 	//printf_maze_direction(maze_board);
 #endif
@@ -335,7 +341,7 @@ void maze_init() {
 #if 0	
     srand(time(NULL));
 #else
-	common_srand();
+	common_rand_seed();
 #endif
 	
     maze_board = (int**) malloc (sizeof(int*) * h);
@@ -409,6 +415,97 @@ void display_maze_info(int **maze_board)
 }
 
 //characeter
+void maze_find_one_direction(int **maze_board)
+{
+	int i,j;
+	int dest_x;
+	int dest_y;
+	int dir;
+	int maze_value;
+	int one_cnt;
+
+	int x_diff;
+	int y_diff;
+	int total_diff;
+	int temp_diff;
+	
+	STRUCT_FRONTIER temp_position[MAZE_WIDTH*MAZE_HEIGHT];
+
+	dest_x = stCharacter_Position.dest_x;
+	dest_y = stCharacter_Position.dest_y;
+
+	one_cnt = 0;
+	total_diff = 0;
+	temp_diff = 0;
+	
+	for(i=0;i<MAZE_HEIGHT;i++)
+	{
+		for(j=0;j<MAZE_WIDTH;j++)
+		{
+			dir = 0;
+			
+			maze_value = maze_board[i][j];
+
+			if ((maze_value & WEST) == WEST)
+			{
+				dir++;
+			}
+
+			if ((maze_value & EAST) == EAST)
+			{
+				dir++;
+			}
+
+			if ((maze_value & NORTH) == NORTH)
+			{
+				dir++;
+			}
+
+			if ((maze_value & SOUTH) == SOUTH)
+			{
+				dir++;
+			}
+
+			if (dir == 1)
+			{
+				temp_position[one_cnt].x = j;
+				temp_position[one_cnt].y = i;
+
+				one_cnt++;
+			}
+		}
+	}
+
+	for(i=0;i<one_cnt;i++)
+	{
+		if (temp_position[i].x > stCharacter_Position.dest_x)
+		{
+			x_diff = temp_position[i].x - stCharacter_Position.dest_x;
+		}
+		else
+		{
+			x_diff = stCharacter_Position.dest_x - temp_position[i].x;
+		}
+
+		if (temp_position[i].y > stCharacter_Position.dest_y)
+		{
+			y_diff = temp_position[i].y - stCharacter_Position.dest_y;
+		}
+		else
+		{
+			y_diff = stCharacter_Position.dest_y - temp_position[i].y;
+		}
+
+		temp_diff = x_diff + y_diff;
+
+		if (temp_diff > total_diff)
+		{
+			total_diff = temp_diff;
+			maze_set_startposition(temp_position[i].x,temp_position[i].y);
+		}
+	}
+}
+
 void maze_set_startposition(int x, int y)
 {
 	stCharacter_Position.start_x = x;
