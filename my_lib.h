@@ -32,6 +32,9 @@ void Buzzer_Beep(int tone, int duration);
 void Timer0_Init(void);
 void Timer0_Delay(int msec);
 
+__attribute__ ((interrupt ("IRQ"))) void Timer0_ISR(void);
+void Timer0_ISR_Init(void);
+
 // Touch.c
 void Touch_Isr_Init(void (*fp)(void));
 void Touch_ISR_Enable(int enable);

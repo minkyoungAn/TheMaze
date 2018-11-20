@@ -666,65 +666,65 @@ void Lcd_Eng_Putch(int x,int y,int color,int bkcolor,int data, int zx, int zy)
 			if(temp[ys]&bitmask[xs])
 			{
 				if( (zx==1)&&(zy==1) ) {
-                    //Lcd_Put_Pixel(x+xs,y+ys,color);
-                    Lcd_Put_Rvs_Pixel(x+xs,y+ys,color);
+                    Lcd_Put_Pixel(x+xs,y+ys,color);
+                    //Lcd_Put_Rvs_Pixel(x+xs,y+ys,color);
                 }
 				else if( (zx==2)&&(zy==1) )
 				{
-					//Lcd_Put_Pixel(x+2*xs,y+ys,color);
-					//Lcd_Put_Pixel(x+2*xs+1,y+ys,color);
-					Lcd_Put_Rvs_Pixel(x+2*xs,y+ys,color);
-					Lcd_Put_Rvs_Pixel(x+2*xs+1,y+ys,color);
+					Lcd_Put_Pixel(x+2*xs,y+ys,color);
+					Lcd_Put_Pixel(x+2*xs+1,y+ys,color);
+					//Lcd_Put_Rvs_Pixel(x+2*xs,y+ys,color);
+					//Lcd_Put_Rvs_Pixel(x+2*xs+1,y+ys,color);
 				}
 				else if( (zx==1)&&(zy==2) )
 				{
-					//Lcd_Put_Pixel(x+xs,y+2*ys,color);
-					//Lcd_Put_Pixel(x+xs,y+2*ys+1,color);
-					Lcd_Put_Rvs_Pixel(x+xs,y+2*ys,color);
-					Lcd_Put_Rvs_Pixel(x+xs,y+2*ys+1,color);
+					Lcd_Put_Pixel(x+xs,y+2*ys,color);
+					Lcd_Put_Pixel(x+xs,y+2*ys+1,color);
+					//Lcd_Put_Rvs_Pixel(x+xs,y+2*ys,color);
+					//Lcd_Put_Rvs_Pixel(x+xs,y+2*ys+1,color);
 				}
 				else if( (zx==2)&&(zy==2) )
 				{
-					//Lcd_Put_Pixel(x+2*xs,y+2*ys+1,color);
-					//Lcd_Put_Pixel(x+2*xs+1,y+2*ys,color);
-					//Lcd_Put_Pixel(x+2*xs,y+2*ys,color);
-					//Lcd_Put_Pixel(x+2*xs+1,y+2*ys+1,color);
-					Lcd_Put_Rvs_Pixel(x+2*xs,y+2*ys+1,color);
-					Lcd_Put_Rvs_Pixel(x+2*xs+1,y+2*ys,color);
-					Lcd_Put_Rvs_Pixel(x+2*xs,y+2*ys,color);
-					Lcd_Put_Rvs_Pixel(x+2*xs+1,y+2*ys+1,color);
+					Lcd_Put_Pixel(x+2*xs,y+2*ys+1,color);
+					Lcd_Put_Pixel(x+2*xs+1,y+2*ys,color);
+					Lcd_Put_Pixel(x+2*xs,y+2*ys,color);
+					Lcd_Put_Pixel(x+2*xs+1,y+2*ys+1,color);
+					//Lcd_Put_Rvs_Pixel(x+2*xs,y+2*ys+1,color);
+					//Lcd_Put_Rvs_Pixel(x+2*xs+1,y+2*ys,color);
+					//Lcd_Put_Rvs_Pixel(x+2*xs,y+2*ys,color);
+					//Lcd_Put_Rvs_Pixel(x+2*xs+1,y+2*ys+1,color);
 				}
 			} 
 			else
 			{
 				if( (zx==1)&&(zy==1) ) {
-                    //Lcd_Put_Pixel(x+xs,y+ys,bkcolor);
-                    Lcd_Put_Rvs_Pixel(x+xs,y+ys,bkcolor);
+                    Lcd_Put_Pixel(x+xs,y+ys,bkcolor);
+                    //Lcd_Put_Rvs_Pixel(x+xs,y+ys,bkcolor);
                 }
 				else if( (zx==2)&&(zy==1) )
 				{
-					//Lcd_Put_Pixel(x+2*xs,y+ys,bkcolor);
-					//Lcd_Put_Pixel(x+2*xs+1,y+ys,bkcolor);
-					Lcd_Put_Rvs_Pixel(x+2*xs,y+ys,bkcolor);
-					Lcd_Put_Rvs_Pixel(x+2*xs+1,y+ys,bkcolor);
+					Lcd_Put_Pixel(x+2*xs,y+ys,bkcolor);
+					Lcd_Put_Pixel(x+2*xs+1,y+ys,bkcolor);
+					//Lcd_Put_Rvs_Pixel(x+2*xs,y+ys,bkcolor);
+					//Lcd_Put_Rvs_Pixel(x+2*xs+1,y+ys,bkcolor);
 				}
 				else if( (zx==1)&&(zy==2) )
 				{
-					//Lcd_Put_Pixel(x+xs,y+2*ys,bkcolor);
-					//Lcd_Put_Pixel(x+xs,y+2*ys+1,bkcolor);
-					Lcd_Put_Rvs_Pixel(x+xs,y+2*ys,bkcolor);
-					Lcd_Put_Rvs_Pixel(x+xs,y+2*ys+1,bkcolor);
+					Lcd_Put_Pixel(x+xs,y+2*ys,bkcolor);
+					Lcd_Put_Pixel(x+xs,y+2*ys+1,bkcolor);
+					//Lcd_Put_Rvs_Pixel(x+xs,y+2*ys,bkcolor);
+					//Lcd_Put_Rvs_Pixel(x+xs,y+2*ys+1,bkcolor);
 				}
 				else if( (zx==2)&&(zy==2) )
 				{
-					//Lcd_Put_Pixel(x+2*xs,y+2*ys+1,bkcolor);
-					//Lcd_Put_Pixel(x+2*xs+1,y+2*ys,bkcolor);
-					//Lcd_Put_Pixel(x+2*xs,y+2*ys,bkcolor);
-					//Lcd_Put_Pixel(x+2*xs+1,y+2*ys+1,bkcolor);
-					Lcd_Put_Rvs_Pixel(x+2*xs,y+2*ys+1,bkcolor);
-					Lcd_Put_Rvs_Pixel(x+2*xs+1,y+2*ys,bkcolor);
-					Lcd_Put_Rvs_Pixel(x+2*xs,y+2*ys,bkcolor);
-					Lcd_Put_Rvs_Pixel(x+2*xs+1,y+2*ys+1,bkcolor);
+					Lcd_Put_Pixel(x+2*xs,y+2*ys+1,bkcolor);
+					Lcd_Put_Pixel(x+2*xs+1,y+2*ys,bkcolor);
+					Lcd_Put_Pixel(x+2*xs,y+2*ys,bkcolor);
+					Lcd_Put_Pixel(x+2*xs+1,y+2*ys+1,bkcolor);
+					//Lcd_Put_Rvs_Pixel(x+2*xs,y+2*ys+1,bkcolor);
+					//Lcd_Put_Rvs_Pixel(x+2*xs+1,y+2*ys,bkcolor);
+					//Lcd_Put_Rvs_Pixel(x+2*xs,y+2*ys,bkcolor);
+					//Lcd_Put_Rvs_Pixel(x+2*xs+1,y+2*ys+1,bkcolor);
 				}	   	
 			} 
 		}
