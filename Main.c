@@ -240,6 +240,7 @@ int Main(void)
 
     //Draw_board();					// draw game board
     Display_bitmap();
+    make_maze();
 
     //TFT_string(6,18,Green,Black, "Press KEY3");	// wait KEY3 to start
     //TFT_string(6,20,Green,Black, "to start !");

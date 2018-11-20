@@ -1,6 +1,12 @@
 #include <stdlib.h>
 #include <time.h>
+
+#include "stdarg.h"
+#include "option.h"
+
 #include "My_lib.h"
+
+#define DEBUG_MAZE
 
 typedef struct
 {
@@ -13,16 +19,21 @@ typedef struct
 #define EAST 0x04
 #define WEST 0x08
 
-void add_frontier(int x, int y, char** maze_board, STRUCT_FRONTIER* frontier);
+void add_frontier(int x, int y, int** maze_board, STRUCT_FRONTIER* frontier);
 void delete_frontier(int len, STRUCT_FRONTIER *save_frontier);
-void mark(int x, int y, char ** maze_board, STRUCT_FRONTIER* frontier);
-void neighbors(int x, int y, char ** maze_board);
+void mark(int x, int y, int ** maze_board, STRUCT_FRONTIER* frontier);
+void neighbors(int x, int y, int ** maze_board);
 int direction(int fx, int fy, int tx, int ty);
 int opposite_direction(int direction);
 void maze_init();
 
-#define MAZE_WIDTH 7
-#define MAZE_HEIGHT 7
+#ifdef DEBUG_MAZE
+void printf_maze_direction(int max_height,int max_width,int **maze_board);
+#endif
+
+
+#define MAZE_WIDTH 6
+#define MAZE_HEIGHT 6
 
 #define IN 0x10;
 #define FRONTIER 0x20;
@@ -34,12 +45,25 @@ int w = MAZE_WIDTH;
 int h = MAZE_HEIGHT;
 
 
-STRUCT_FRONTIER stFrontier[49];
+STRUCT_FRONTIER stFrontier[MAZE_WIDTH*MAZE_HEIGHT];
 STRUCT_FRONTIER stNeighbors[4];
 
 int** maze_board;
 
-void add_frontier(int x, int y, char ** maze_board, STRUCT_FRONTIER *frontier)
+void Maze_Debug_Printf(const char * fmt,...)
+{
+#ifdef DEBUG_MAZE
+	va_list ap;
+    char string[256];
+
+    va_start(ap,fmt);
+    vsprintf(string,fmt,ap);
+    Uart_Send_String(string);
+    va_end(ap);
+#endif
+}
+
+void add_frontier(int x, int y, int ** maze_board, STRUCT_FRONTIER *frontier)
 {
 	if ((x >= 0) && (y >= 0) && (x < w) && (y < h) && (maze_board[y][x] == 0))
 	{
@@ -66,19 +90,17 @@ void delete_frontier(int len, STRUCT_FRONTIER* save_frontier)
 }
 
 
-void mark(int x, int y, char ** maze_board, STRUCT_FRONTIER* frontier)
+void mark(int x, int y, int ** maze_board, STRUCT_FRONTIER* frontier)
 {
 	maze_board[y][x] |= IN;
 
-	Uart_Printf("Mark Start\n");
 	add_frontier(x-1,y,maze_board,frontier);
 	add_frontier(x+1,y,maze_board,frontier);
 	add_frontier(x,y-1,maze_board,frontier);
 	add_frontier(x,y+1,maze_board,frontier);
-	Uart_Printf("Mark End\n");
 }
 
-void neighbors(int x, int y, char ** maze_board)
+void neighbors(int x, int y, int ** maze_board)
 {
 	int maze_value;
 	int compare_value;
@@ -91,8 +113,6 @@ void neighbors(int x, int y, char ** maze_board)
 		compare_value = maze_value & IN;
 	}
 
-	Uart_Printf("neighbors 1st %d %d %d %d\n",y,x,maze_value,neighbor_count);
-#if 1	
 	if ((x > 0) && (compare_value != 0))
 	{
 		stNeighbors[neighbor_count].x = x-1;
@@ -100,7 +120,6 @@ void neighbors(int x, int y, char ** maze_board)
 
 		neighbor_count++;
 	}
-#endif	
 
 	if (x+1 < w)
 	{
@@ -108,8 +127,6 @@ void neighbors(int x, int y, char ** maze_board)
 		compare_value = maze_value & IN;
 	}
 
-	Uart_Printf("neighbors 2nd %d %d %d %d %d\n",y,x,maze_value,neighbor_count, compare_value);
-#if 1	
 	if ((x+1 < w) && (compare_value != 0))
 	{
 		stNeighbors[neighbor_count].x = x+1;
@@ -117,7 +134,6 @@ void neighbors(int x, int y, char ** maze_board)
 
 		neighbor_count++;
 	}
-#endif	
 
 	if (y > 0)
 	{
@@ -125,8 +141,6 @@ void neighbors(int x, int y, char ** maze_board)
 		compare_value = maze_value & IN;
 	}
 
-	Uart_Printf("neighbors 3rd %d %d %d %d\n",y,x,maze_value,neighbor_count);
-#if 1	
 	if ((y > 0) && (compare_value != 0))
 	{
 		stNeighbors[neighbor_count].x = x;
@@ -134,7 +148,6 @@ void neighbors(int x, int y, char ** maze_board)
 
 		neighbor_count++;
 	}
-#endif	
 
 	if (y+1 < w)
 	{
@@ -142,8 +155,6 @@ void neighbors(int x, int y, char ** maze_board)
 		compare_value = maze_value & IN;
 	}
 
-	Uart_Printf("neighbors 4th %d %d %d %d\n",y,x,maze_value,neighbor_count);
-#if 1	
 	if ((y+1 < h) && (compare_value != 0))
 	{
 		stNeighbors[neighbor_count].x = x;
@@ -151,7 +162,6 @@ void neighbors(int x, int y, char ** maze_board)
 
 		neighbor_count++;
 	}
-#endif	
 }
 
 int direction(int fx, int fy, int tx, int ty)
@@ -213,8 +223,6 @@ void make_maze() {
 	y = rand()%5;
 	
     maze_init();
-
-	Uart_Printf("maze_init OK!!\n");
 	
 	mark(x,y,maze_board, &stFrontier[0]);
 
@@ -225,8 +233,6 @@ void make_maze() {
 		x = temp_frontier.x;
 		y = temp_frontier.y;
 		
-		Uart_Printf("delete_frontier OK!!\n");
-		
 		neighbors(x,y,maze_board);
 
 		len = rand() % neighbor_count;
@@ -234,8 +240,6 @@ void make_maze() {
 		nx = stNeighbors[len].x;
 		ny = stNeighbors[len].y;
 
-		Uart_Printf("neighbors OK!!\n");
-		
 		dir = direction(x,y,nx,ny);
 		maze_board[y][x] |= dir;
 
@@ -245,7 +249,10 @@ void make_maze() {
 		mark(x,y,maze_board, &stFrontier[0]);
 		cnt++;
 	}
-	Uart_Printf("maze check cnt %d\n",cnt);
+
+#ifdef DEBUG_MAZE
+	printf_maze_direction(MAZE_HEIGHT,MAZE_WIDTH,maze_board);
+#endif
 }
 
 void maze_init() {
@@ -264,3 +271,20 @@ void maze_init() {
         }
     }
 }
+
+#ifdef DEBUG_MAZE
+void printf_maze_direction(int max_height,int max_width,int **maze_board)
+{
+	int i,j;
+	
+	for(i=0;i<max_height;i++)
+	{
+		for(j=0;j<max_width;j++)
+		{
+			Maze_Debug_Printf("[%d][%d] = 0x%x\n",i,j,(maze_board[i][j] % 0xF));
+		}
+	}
+}
+#endif
+
+//void display_maze(
