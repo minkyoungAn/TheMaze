@@ -8,27 +8,8 @@
 #include "my_lib.h"
 #include "macro.h"
 #include "tetris.h"
-#include "./images/ALPHA.H"
-#include "./images/BG.H"
-#include "./images/BOTTOM.H"
-#include "./images/WALL.H"
-#include "./images/WALL2.H"
-#include "./images/EPSILON.H"
-#include "./images/EPSILON2.H"
-#include "./images/ETA.H"
-#include "./images/HOME.H"
-#include "./images/LEFT.H"
-#include "./images/LTDOG.H"
-#include "./images/MU.H"
-#include "./images/RIGHT.H"
-#include "./images/RTDOG.H"
-#include "./images/TAU.H"
-#include "./images/TITLE.H"
-#include "./images/TOP.H"
-#include "./images/WARN.H"
-#include "./images/ZETA.H"
-#include "./images/PAW.H"
 
+#include "images.h"
 
 void MMU_Init(void);
 
@@ -241,6 +222,7 @@ int Main(void)
     //Draw_board();					// draw game board
     Display_bitmap();
     make_maze();
+    display_maze();
 
     //TFT_string(6,18,Green,Black, "Press KEY3");	// wait KEY3 to start
     //TFT_string(6,20,Green,Black, "to start !");
