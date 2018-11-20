@@ -28,6 +28,8 @@
 #include "./images/WARN.H"
 #include "./images/ZETA.H"
 #include "./images/PAW.H"
+#include "./images/TIMER.H"
+
 
 
 void MMU_Init(void);
@@ -566,7 +568,8 @@ void Draw_board(void)				/* draw outline of game board */
 void Display_bitmap(void)
 {
     int xtmp, ytmp;
-    int height_tmp=20;
+    int height_tmp=0;
+	int width_tmp=0;
 	
     Lcd_Get_Info_BMP(&xtmp, &ytmp, BG);
     Lcd_Get_Info_BMP(&xtmp, &ytmp, tau);
@@ -577,9 +580,14 @@ void Display_bitmap(void)
 	Lcd_Get_Info_BMP(&xtmp, &ytmp, epsilon2);
 	Lcd_Get_Info_BMP(&xtmp, &ytmp, zeta);
 	Lcd_Get_Info_BMP(&xtmp, &ytmp, paw);
+	Lcd_Get_Info_BMP(&xtmp, &ytmp, wall);
+	Lcd_Get_Info_BMP(&xtmp, &ytmp, HOME);
+
     //Lcd_Draw_BMP(((LCD_XSIZE/2)-(xtmp/2)), ((LCD_YSIZE/2)-(ytmp/2)), rubber);
 
     Lcd_Draw_BMP(0, 0, BG);
+	
+	height_tmp = 20;
 
 	Lcd_Draw_BMP(375, height_tmp, tau);
 
@@ -597,7 +605,30 @@ void Display_bitmap(void)
 
 	Lcd_Draw_BMP(420, height_tmp+=37, epsilon2);
 
-	Lcd_Draw_BMP(400, height_tmp+=37, paw);
+	Lcd_Draw_BMP(390, height_tmp+=37, paw);
+
+	width_tmp = 80;
+	height_tmp = 70;
+	int cells = 6;
+	int i;
+	for(i = 0; i < cells;i++){
+
+		Lcd_Draw_BMP(width_tmp, height_tmp, wall2);
+		Lcd_Draw_BMP(width_tmp+(30*cells), height_tmp, wall2);
+		height_tmp+=28;
+	}
+	width_tmp = 80;
+	height_tmp = 70;
+	for(i = 0; i < cells;i++){
+
+		Lcd_Draw_BMP(width_tmp, height_tmp, wall);
+		Lcd_Draw_BMP(width_tmp, height_tmp+(28*cells), wall);
+		width_tmp+=30;
+	}
+
+	Lcd_Draw_BMP(150,150, HOME);
+	Lcd_Draw_BMP(50,380, timer);
+
 
 }
 
