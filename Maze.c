@@ -34,6 +34,9 @@ typedef struct
 #define MAZE_BLOCK_WIDTH	30
 #define MAZE_BLOCK_HEIGHT	28
 
+#define MAZE_CHA_SPACE_WIDTH	4
+#define MAZE_CHA_SPACE_HEIGHT	3
+
 //maze init
 void add_frontier(int x, int y, int** maze_board, STRUCT_FRONTIER* frontier);
 void delete_frontier(int len, STRUCT_FRONTIER *save_frontier);
@@ -49,6 +52,9 @@ void display_maze_info(int **maze_board);
 //character
 void maze_set_startposition(int x, int y);
 void maze_set_destposition(int x, int y);
+
+void display_destHome(void);
+void display_character_start(void);
 
 #ifdef DEBUG_MAZE
 void printf_maze_direction(int **maze_board);
@@ -213,7 +219,7 @@ int direction(int fx, int fy, int tx, int ty)
 
 int opposite_direction(int direction)
 {
-	if (direction == SOUTH)
+	if (direction == EAST)
 	{
 		return WEST;
 	}
@@ -266,12 +272,14 @@ void make_maze() {
 		ny = stNeighbors[len].y;
 
 		dir = direction(x,y,nx,ny);
-		maze_board[y][x] |= dir;
+		maze_board[y][x] |= dir;	
 
 		dir_opposite = opposite_direction(dir);
 		maze_board[ny][nx] |= dir_opposite;
 
 		mark(x,y,maze_board, &stFrontier[0]);
+
+		Maze_Debug_Printf("[%d][%d]=0x%x [%d][%d]=0x%x\n",x,y,dir,nx,ny,dir_opposite);
 	}
 
 #ifdef DEBUG_MAZE
@@ -291,7 +299,7 @@ void maze_init() {
 
     for(i = 0 ; i<h ; i++) {
         for(j = 0 ; j<w ; j++) {
-            maze_board[i][j] = 0;
+            maze_board[i][j] = 0x00;
         }
     }
 }
@@ -348,8 +356,8 @@ void display_maze_info(int **maze_board)
 			}
 		}
 	}
-
-	Lcd_Display_Frame_Buffer(0);
+	display_destHome();
+	display_character_start();
 }
 
 //characeter
@@ -363,4 +371,21 @@ void maze_set_destposition(int x, int y)
 {
 	stCharacter_Position.dest_x = x;
 	stCharacter_Position.dest_y = y;
+}
+
+void display_destHome(void)
+{
+	Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * stCharacter_Position.dest_x)+MAZE_CHA_SPACE_WIDTH,
+	MAZE_START_Y+(MAZE_BLOCK_HEIGHT * stCharacter_Position.dest_y)+MAZE_CHA_SPACE_HEIGHT,HOME);
+}
+
+void display_character_start(void)
+{
+	Lcd_Select_Frame_Buffer(1);
+	Lcd_Copy(0,1);
+	
+	Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * stCharacter_Position.start_x)+MAZE_CHA_SPACE_WIDTH,
+	MAZE_START_Y+(MAZE_BLOCK_HEIGHT * stCharacter_Position.start_y)+MAZE_CHA_SPACE_HEIGHT,LTDOG);
+
+	Lcd_Display_Frame_Buffer(1);
 }

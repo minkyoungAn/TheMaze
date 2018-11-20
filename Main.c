@@ -562,7 +562,6 @@ void Display_bitmap(void)
 	Lcd_Get_Info_BMP(&xtmp, &ytmp, zeta);
 	Lcd_Get_Info_BMP(&xtmp, &ytmp, paw);
 	Lcd_Get_Info_BMP(&xtmp, &ytmp, wall);
-	Lcd_Get_Info_BMP(&xtmp, &ytmp, HOME);
 
     //Lcd_Draw_BMP(((LCD_XSIZE/2)-(xtmp/2)), ((LCD_YSIZE/2)-(ytmp/2)), rubber);
 
@@ -606,8 +605,7 @@ void Display_bitmap(void)
 		Lcd_Draw_BMP(width_tmp, height_tmp+(28*cells), wall);
 		width_tmp+=30;
 	}
-
-	Lcd_Draw_BMP(150,150, HOME);
+	
 	Lcd_Draw_BMP(50,380, timer);
 
 
