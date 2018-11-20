@@ -256,7 +256,8 @@ void make_maze() {
 		delete_frontier(len,&temp_frontier);
 		x = temp_frontier.x;
 		y = temp_frontier.y;
-		
+
+		maze_set_destposition(x,y);
 		neighbors(x,y,maze_board);
 
 		len = rand() % neighbor_count;
