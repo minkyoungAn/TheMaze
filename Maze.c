@@ -30,8 +30,8 @@ typedef struct
 #define EAST 0x04
 #define WEST 0x08
 
-#define MAZE_START_X 80
-#define MAZE_START_Y 70
+#define MAZE_START_X 90
+#define MAZE_START_Y 60
 
 #define MAZE_BLOCK_WIDTH	30
 #define MAZE_BLOCK_HEIGHT	28
@@ -89,8 +89,8 @@ void printf_maze_direction(int **maze_board);
 #endif
 
 
-#define MAZE_WIDTH 6
-#define MAZE_HEIGHT 6
+#define MAZE_WIDTH 7
+#define MAZE_HEIGHT 7
 
 #define IN 0x10;
 #define FRONTIER 0x20;
@@ -324,7 +324,7 @@ void make_maze() {
 	}
 
 #ifdef DEBUG_MAZE
-	printf_maze_direction(maze_board);
+	//printf_maze_direction(maze_board);
 #endif
 }
 
@@ -373,29 +373,32 @@ void display_maze(void)
 void display_maze_info(int **maze_board)
 {
 	int i,j;
+	int maze_value;
 	
 	Lcd_Select_Frame_Buffer(0);
-
+	
 	for(i=0;i<MAZE_HEIGHT;i++)
 	{
 		for(j=0;j<MAZE_WIDTH;j++)
 		{
-			if ((maze_board[i][j] & WEST) == 0)
+			maze_value = maze_board[i][j];
+			
+			if ((maze_value & WEST) == 0)
 			{
 				Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * j),MAZE_START_Y+(MAZE_BLOCK_HEIGHT * i),wall2);
 			}
 
-			if ((maze_board[i][j] & EAST) == 0)
+			if ((maze_value & EAST) == 0)
 			{
 				Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * j)+MAZE_BLOCK_WIDTH,MAZE_START_Y+(MAZE_BLOCK_HEIGHT * i),wall2);
 			}
 
-			if ((maze_board[i][j] & NORTH) == 0)
+			if ((maze_value & NORTH) == 0)
 			{
 				Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * j),MAZE_START_Y+(MAZE_BLOCK_HEIGHT * i),wall);
 			}
 
-			if ((maze_board[i][j] & SOUTH) == 0)
+			if ((maze_value & SOUTH) == 0)
 			{
 				Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * j),MAZE_START_Y+(MAZE_BLOCK_HEIGHT * i)+MAZE_BLOCK_HEIGHT,wall);
 			}
@@ -403,11 +406,6 @@ void display_maze_info(int **maze_board)
 	}
 	display_destHome();
 	display_character_start();
-
-	while(1)
-	{		
-		Uart_Printf("0x%X\n",(*(volatile unsigned long int *)0x57000090));
-	}
 }
 
 //characeter
