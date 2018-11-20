@@ -19,4 +19,5 @@
 #include "images/WARN.H"
 #include "images/ZETA.H"
 #include "images/PAW.H"
+#include "images/TIMER.H"
 

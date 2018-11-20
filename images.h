@@ -21,5 +21,6 @@ extern unsigned char wall[];
 extern unsigned char wall2[];
 extern unsigned char warn[];
 extern unsigned char zeta[];
+extern unsigned char timer[];
 
 #endif
