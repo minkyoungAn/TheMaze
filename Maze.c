@@ -4,7 +4,9 @@
 #include "stdarg.h"
 #include "option.h"
 
+#include "2450addr.h"
 #include "My_lib.h"
+
 #include "images.h"
 
 #define DEBUG_MAZE
@@ -36,6 +38,32 @@ typedef struct
 
 #define MAZE_CHA_SPACE_WIDTH	4
 #define MAZE_CHA_SPACE_HEIGHT	3
+
+//common
+int common_rand();
+
+static unsigned long int next = 1;
+static unsigned long int tick;
+
+void common_srand(void)
+{
+	next = (*(volatile unsigned long int *)0x57000090);
+}
+
+int common_rand()
+{
+	common_srand();
+	next = next * 1103515245 + 12345;
+	return (unsigned int) (next/65536) % 32768;	
+}
+
+void Tick_Count_Start(void)
+{
+	rRTCCON |= 1;	
+	rRTCCON |= (1<<4);
+	
+	rTICNT |= (1<<7);
+}
 
 //maze init
 void add_frontier(int x, int y, int** maze_board, STRUCT_FRONTIER* frontier);
@@ -247,9 +275,14 @@ void make_maze() {
 	int dir_opposite;
 	
 	STRUCT_FRONTIER temp_frontier;
-	
+
+#if 0	
 	x = rand()%5;
 	y = rand()%5;
+#else
+	x = common_rand()%MAZE_WIDTH;
+	y = common_rand()%MAZE_WIDTH;
+#endif
 
 	maze_set_startposition(x,y);
     maze_init();
@@ -258,7 +291,11 @@ void make_maze() {
 
 	while(frontier_count != 0)
 	{
+#if 0	
 		len = rand() % frontier_count;
+#else
+		len = common_rand() % frontier_count;
+#endif
 		delete_frontier(len,&temp_frontier);
 		x = temp_frontier.x;
 		y = temp_frontier.y;
@@ -266,7 +303,11 @@ void make_maze() {
 		maze_set_destposition(x,y);
 		neighbors(x,y,maze_board);
 
+#if 0
 		len = rand() % neighbor_count;
+#else
+		len = common_rand() % neighbor_count;
+#endif
 		
 		nx = stNeighbors[len].x;
 		ny = stNeighbors[len].y;
@@ -291,7 +332,11 @@ void maze_init() {
 	int i;
 	int j;
 	
+#if 0	
     srand(time(NULL));
+#else
+	common_srand();
+#endif
 	
     maze_board = (int**) malloc (sizeof(int*) * h);
     for(i = 0 ; i<h ; i++)
@@ -313,7 +358,7 @@ void printf_maze_direction(int **maze_board)
 	{
 		for(j=0;j<MAZE_WIDTH;j++)
 		{
-			Maze_Debug_Printf("[%d][%d] = 0x%x\n",i,j,(maze_board[i][j] % 0xF));
+			Maze_Debug_Printf("[%d][%d] = 0x%x\n",i,j,(maze_board[i][j] & 0xF));
 		}
 	}
 }
@@ -358,6 +403,11 @@ void display_maze_info(int **maze_board)
 	}
 	display_destHome();
 	display_character_start();
+
+	while(1)
+	{		
+		Uart_Printf("0x%X\n",(*(volatile unsigned long int *)0x57000090));
+	}
 }
 
 //characeter

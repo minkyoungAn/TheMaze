@@ -215,7 +215,8 @@ int Main(void)
     signed char left_limit_flag = 0, right_limit_flag = 0, y_limit_flag = 0, rotate_limit_flag = 0;
     signed char temp_tetris[4][4], del_tetris[4][4];
 
-    HW_Initial();       
+    HW_Initial();
+    Tick_Count_Start();
 
 	Show_Welcome("LCD Test");
 

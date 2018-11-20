@@ -59,6 +59,9 @@ void Lcd_Draw_BMP(int x, int y, const unsigned char *fp);
 void make_maze();
 void display_maze(void);
 
+//common
+void Tick_Count_Start(void);
+
 // MMU.c
 void MMU_Init(void);
 void MMU_SetMTT(int vaddrStart,int vaddrEnd,int paddrStart,int attr);
