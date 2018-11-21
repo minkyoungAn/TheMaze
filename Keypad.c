@@ -7,12 +7,18 @@ void Key_EINT2_ISR(void) __attribute__ ((interrupt ("IRQ")));;
 void Key_EINT3_ISR(void) __attribute__ ((interrupt ("IRQ")));;
 void Key_EINT4_6_ISR(void) __attribute__ ((interrupt ("IRQ")));;
 
+extern unsigned char game_play;
+
 void Key_EINT2_ISR(void)
 {
 	rINTMSK1 |= (0x7<<2);
 	rINTMSK1  |= (0x1<<10);
 
 	//Uart_Printf("1\n");
+	if (game_play == 2)
+	{
+		maze_character_move_left();
+	}
 
 	rSRCPND1 |= (0x7<<2);
 	rINTPND1 |= (0x7<<2);
@@ -25,6 +31,10 @@ void Key_EINT3_ISR(void)
 	rINTMSK1  |= (0x1<<10);
 
 	//Uart_Printf("2\n");
+	if (game_play == 2)
+	{
+		maze_character_move_down();
+	}
 	
 	rSRCPND1 |=(0x7<<2);
 	rINTPND1 |=(0x7<<2);
@@ -36,18 +46,27 @@ void Key_EINT4_6_ISR(void)
 	rEINTMASK |= 0x7<<4; // masking 
 	rINTMSK1 |= (0x7<<2);
 	rINTMSK1  |= (0x1<<10);	
-	#if 0
+	#if 1
 	if(rEINTPEND == 0x10){
-		Uart_Printf("3\n");
-		
+		//Uart_Printf("3\n");
+		if (game_play == 2)
+		{
+			maze_character_move_up();
+		}		
 	}
 	else if(rEINTPEND == 0x20){
-		Uart_Printf("4\n");
-		
+		//Uart_Printf("4\n");
+		if (game_play == 2)
+		{
+			maze_character_move_right();
+		}		
 	}
 	else if(rEINTPEND == 0x40){
-		Uart_Printf("5\n");
-		
+		//Uart_Printf("5\n");
+		if (game_play == 3)
+		{
+			game_play = 4;
+		}		
 	}
 	#endif
 	rEINTPEND |= 0x3<<4; // pending	
@@ -83,7 +102,6 @@ void Init_Key(void)
 	rINTMOD1 &= ~ 0x7<<2;
 	rINTMSK1 &= ~ 0x7<<2;
 	rEINTMASK &= ~ 0x7<<4;
-	
 }
 
 int Get_Key_byPolling(void)

@@ -9,7 +9,7 @@
 
 #include "images.h"
 
-#define DEBUG_MAZE
+//#define DEBUG_MAZE
 
 typedef struct
 {
@@ -39,6 +39,10 @@ typedef struct
 #define MAZE_CHA_SPACE_WIDTH	4
 #define MAZE_CHA_SPACE_HEIGHT	3
 
+#define MAZE_CHA_WIDTH	24
+#define MAZE_CHA_HEIGHT	24
+
+extern unsigned char game_play;
 //common
 int common_rand();
 
@@ -533,4 +537,240 @@ void display_character_start(void)
 	MAZE_START_Y+(MAZE_BLOCK_HEIGHT * stCharacter_Position.start_y)+MAZE_CHA_SPACE_HEIGHT,LTDOG);
 
 	Lcd_Display_Frame_Buffer(1);
+}
+
+void maze_character_move_up(void)
+{
+	int current_x;
+	int current_y;
+
+	int move_x;
+	int move_y;
+
+	int clr_x;
+	int clr_y;
+	
+	int maze_value;
+
+	int move;
+
+	move = 0;
+	
+	current_x = stCharacter_Position.start_x;
+	current_y = stCharacter_Position.start_y;
+
+	maze_value = maze_board[current_y][current_x];
+
+//move disp	
+	if ((maze_value & NORTH) == NORTH)
+	{
+		move = 1;
+		
+		move_x = current_x;
+		move_y = current_y -1;
+
+		clr_x = MAZE_START_X+(MAZE_BLOCK_WIDTH * current_x)+MAZE_CHA_SPACE_WIDTH;
+		clr_y = MAZE_START_Y+(MAZE_BLOCK_HEIGHT * current_y)+MAZE_CHA_SPACE_HEIGHT;
+		
+		Lcd_Select_Frame_Buffer(1);
+
+		Lcd_Clr_Area(clr_x,clr_y,clr_x+MAZE_CHA_WIDTH,clr_y+MAZE_CHA_HEIGHT,0x0000); //black
+
+		Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * move_x)+MAZE_CHA_SPACE_WIDTH,
+		MAZE_START_Y+(MAZE_BLOCK_HEIGHT * move_y)+MAZE_CHA_SPACE_HEIGHT,LTDOG);
+
+		Lcd_Display_Frame_Buffer(1);
+	}
+
+//move check
+	if (move == 1)
+	{
+		stCharacter_Position.start_x = move_x;
+		stCharacter_Position.start_y = move_y;
+
+		if ((stCharacter_Position.start_x == stCharacter_Position.dest_x)
+			&& (stCharacter_Position.start_y == stCharacter_Position.dest_y))
+		{
+			game_play = 3; //clear
+
+			Maze_Debug_Printf("Clear!!\n");
+		}
+	}
+}
+
+void maze_character_move_down(void)
+{
+	int current_x;
+	int current_y;
+
+	int move_x;
+	int move_y;
+
+	int clr_x;
+	int clr_y;
+	
+	int maze_value;
+
+	int move;
+
+	move = 0;
+	
+	current_x = stCharacter_Position.start_x;
+	current_y = stCharacter_Position.start_y;
+
+	maze_value = maze_board[current_y][current_x];
+
+//move disp	
+	if ((maze_value & SOUTH) == SOUTH)
+	{
+		move = 1;
+		
+		move_x = current_x;
+		move_y = current_y + 1;
+
+		clr_x = MAZE_START_X+(MAZE_BLOCK_WIDTH * current_x)+MAZE_CHA_SPACE_WIDTH;
+		clr_y = MAZE_START_Y+(MAZE_BLOCK_HEIGHT * current_y)+MAZE_CHA_SPACE_HEIGHT;
+		
+		Lcd_Select_Frame_Buffer(1);
+
+		Lcd_Clr_Area(clr_x,clr_y,clr_x+MAZE_CHA_WIDTH,clr_y+MAZE_CHA_HEIGHT,0x0000); //black
+
+		Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * move_x)+MAZE_CHA_SPACE_WIDTH,
+		MAZE_START_Y+(MAZE_BLOCK_HEIGHT * move_y)+MAZE_CHA_SPACE_HEIGHT,LTDOG);
+
+		Lcd_Display_Frame_Buffer(1);
+	}
+
+//move check
+	if (move == 1)
+	{
+		stCharacter_Position.start_x = move_x;
+		stCharacter_Position.start_y = move_y;
+
+		if ((stCharacter_Position.start_x == stCharacter_Position.dest_x)
+			&& (stCharacter_Position.start_y == stCharacter_Position.dest_y))
+		{
+			game_play = 3; //clear
+
+			Maze_Debug_Printf("Clear!!\n");
+		}
+	}
+}
+
+void maze_character_move_left(void)
+{
+	int current_x;
+	int current_y;
+
+	int move_x;
+	int move_y;
+
+	int clr_x;
+	int clr_y;
+	
+	int maze_value;
+
+	int move;
+
+	move = 0;
+	
+	current_x = stCharacter_Position.start_x;
+	current_y = stCharacter_Position.start_y;
+
+	maze_value = maze_board[current_y][current_x];
+
+//move disp	
+	if ((maze_value & WEST) == WEST)
+	{
+		move = 1;
+		
+		move_x = current_x - 1;
+		move_y = current_y;
+
+		clr_x = MAZE_START_X+(MAZE_BLOCK_WIDTH * current_x)+MAZE_CHA_SPACE_WIDTH;
+		clr_y = MAZE_START_Y+(MAZE_BLOCK_HEIGHT * current_y)+MAZE_CHA_SPACE_HEIGHT;
+		
+		Lcd_Select_Frame_Buffer(1);
+
+		Lcd_Clr_Area(clr_x,clr_y,clr_x+MAZE_CHA_WIDTH,clr_y+MAZE_CHA_HEIGHT,0x0000); //black
+
+		Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * move_x)+MAZE_CHA_SPACE_WIDTH,
+		MAZE_START_Y+(MAZE_BLOCK_HEIGHT * move_y)+MAZE_CHA_SPACE_HEIGHT,LTDOG);
+
+		Lcd_Display_Frame_Buffer(1);
+	}
+
+//move check
+	if (move == 1)
+	{
+		stCharacter_Position.start_x = move_x;
+		stCharacter_Position.start_y = move_y;
+
+		if ((stCharacter_Position.start_x == stCharacter_Position.dest_x)
+			&& (stCharacter_Position.start_y == stCharacter_Position.dest_y))
+		{
+			game_play = 3; //clear
+
+			Maze_Debug_Printf("Clear!!\n");
+		}
+	}
+}
+
+void maze_character_move_right(void)
+{
+	int current_x;
+	int current_y;
+
+	int move_x;
+	int move_y;
+
+	int clr_x;
+	int clr_y;
+	
+	int maze_value;
+
+	int move;
+
+	move = 0;
+	
+	current_x = stCharacter_Position.start_x;
+	current_y = stCharacter_Position.start_y;
+
+	maze_value = maze_board[current_y][current_x];
+
+//move disp	
+	if ((maze_value & EAST) == EAST)
+	{
+		move = 1;
+		
+		move_x = current_x + 1;
+		move_y = current_y;
+
+		clr_x = MAZE_START_X+(MAZE_BLOCK_WIDTH * current_x)+MAZE_CHA_SPACE_WIDTH;
+		clr_y = MAZE_START_Y+(MAZE_BLOCK_HEIGHT * current_y)+MAZE_CHA_SPACE_HEIGHT;
+		
+		Lcd_Select_Frame_Buffer(1);
+
+		Lcd_Clr_Area(clr_x,clr_y,clr_x+MAZE_CHA_WIDTH,clr_y+MAZE_CHA_HEIGHT,0x0000); //black
+
+		Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * move_x)+MAZE_CHA_SPACE_WIDTH,
+		MAZE_START_Y+(MAZE_BLOCK_HEIGHT * move_y)+MAZE_CHA_SPACE_HEIGHT,LTDOG);
+
+		Lcd_Display_Frame_Buffer(1);
+	}
+
+//move check
+	if (move == 1)
+	{
+		stCharacter_Position.start_x = move_x;
+		stCharacter_Position.start_y = move_y;
+
+		if ((stCharacter_Position.start_x == stCharacter_Position.dest_x)
+			&& (stCharacter_Position.start_y == stCharacter_Position.dest_y))
+		{
+			game_play = 3; //clear
+
+			Maze_Debug_Printf("Clear!!\n");
+		}
+	}
 }

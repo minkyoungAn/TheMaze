@@ -206,6 +206,8 @@ void Touch_ISR()
 }
 /* ---------------------------------------------------------------------------- */
 
+unsigned char game_play; //1ready:2play:3clear:4restart
+extern unsigned char play_time;
 int Main(void)
 {
     unsigned int  score = 0;
@@ -217,8 +219,10 @@ int Main(void)
     signed char left_limit_flag = 0, right_limit_flag = 0, y_limit_flag = 0, rotate_limit_flag = 0;
     signed char temp_tetris[4][4], del_tetris[4][4];
 
+	game_play = 1;
     HW_Initial();
     Tick_Count_Start();
+    Timer0_ISR_Init();
 
 	Show_Welcome("LCD Test");
 
@@ -228,6 +232,7 @@ int Main(void)
 		Display_text();
     	make_maze();
     	display_maze();
+<<<<<<< HEAD
 	    Timer0_ISR_Init();
 		#if 0
 		do
@@ -237,6 +242,27 @@ int Main(void)
 		Lcd_Printf(85, 140, SILVER, BLACK, 2,2, "GAME CLEAR !!!");
 		while(1);
 		
+=======
+
+	    play_time = 0;
+		game_play = 2;
+	    while(1)
+	    {
+	    	if (game_play == 3)
+	    	{
+	    		Lcd_Printf(85,140,SILVER,BLACK,2,2,"GAME CLEAR !!!");
+	    		break;
+	    	}
+	    }
+
+	    while(1)
+	    {
+	    	if(game_play == 4)
+	    	{
+	    		break;
+	    	}
+	    }
+>>>>>>> 31b4ef87f98177b0ef5f7951df7168f88317b432
     }
 
     //TFT_string(6,18,Green,Black, "Press KEY3");	// wait KEY3 to start
@@ -624,7 +650,7 @@ void Display_bitmap(void)
 	
 	Lcd_Draw_BMP(120,20, timer);
 
-
+	Lcd_Draw_BMP(120, 20, timer);
 }
 
 void Display_score(unsigned int score)			// display score

@@ -2,7 +2,8 @@
 #include "option.h"
 #include "my_lib.h"
 
-unsigned int new_time;
+extern unsigned char game_play;
+unsigned int play_time;
 
 void Timer0_ISR(void)
 {
@@ -11,15 +12,18 @@ void Timer0_ISR(void)
 	int mil;
 	
 	rINTMSK1 |= BIT_TIMER0;
-	
-	new_time++;
 
-	mil = new_time%100;
-	sec = (new_time/100)%60;
-	min = (new_time/100)/60;
-	
-	Lcd_Printf(150,20,0xFFFF,0x0000,1,1,"%02d:%02d:%02d",min,sec,mil);
-	Lcd_Display_Frame_Buffer(1);
+	if (game_play == 2)
+	{
+		play_time++;
+
+		mil = play_time%100;
+		sec = (play_time/100)%60;
+		min = (play_time/100)/60;
+		
+		Lcd_Printf(170,30,0xFFFF,0x0000,1,1,"%02d:%02d:%02d",min,sec,mil);
+		Lcd_Display_Frame_Buffer(1);
+	}
 	
 	rSRCPND1 |= BIT_TIMER0;
 	rINTPND1 |= BIT_TIMER0;
