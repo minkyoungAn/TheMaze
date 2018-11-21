@@ -237,6 +237,7 @@ int Main(void)
 	    {
 	    	if (game_play == 3)
 	    	{
+
 	    		Lcd_Printf(85,140,SILVER,BLACK,2,2,"GAME CLEAR !!!");
 	    		break;
 	    	}
@@ -611,6 +612,7 @@ void Display_bitmap(void)
 	Lcd_Get_Info_BMP(&xtmp, &ytmp, epsilon2);
 	Lcd_Get_Info_BMP(&xtmp, &ytmp, zeta);
 	Lcd_Get_Info_BMP(&xtmp, &ytmp, paw);
+	Lcd_Get_Info_BMP(&xtmp, &ytmp, clear);
 
     Lcd_Draw_BMP(0, 0, BG);
 	

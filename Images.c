@@ -20,4 +20,5 @@
 #include "images/ZETA.H"
 #include "images/PAW.H"
 #include "images/TIMER.H"
+#include "images/CLEAR.H"
 

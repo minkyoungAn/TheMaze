@@ -592,7 +592,14 @@ void maze_character_move_up(void)
 			&& (stCharacter_Position.start_y == stCharacter_Position.dest_y))
 		{
 			game_play = 3; //clear
+			Lcd_Select_Frame_Buffer(1);
 
+			Lcd_Clr_Area(clr_x,clr_y,clr_x+MAZE_CHA_WIDTH,clr_y+MAZE_CHA_HEIGHT,0x0000); //black
+
+			Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * move_x)+MAZE_CHA_SPACE_WIDTH,
+			MAZE_START_Y+(MAZE_BLOCK_HEIGHT * move_y)+MAZE_CHA_SPACE_HEIGHT,clear);
+
+			Lcd_Display_Frame_Buffer(1);
 			Maze_Debug_Printf("Clear!!\n");
 		}
 	}
@@ -651,7 +658,14 @@ void maze_character_move_down(void)
 			&& (stCharacter_Position.start_y == stCharacter_Position.dest_y))
 		{
 			game_play = 3; //clear
+			Lcd_Select_Frame_Buffer(1);
 
+			Lcd_Clr_Area(clr_x,clr_y,clr_x+MAZE_CHA_WIDTH,clr_y+MAZE_CHA_HEIGHT,0x0000); //black
+
+			Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * move_x)+MAZE_CHA_SPACE_WIDTH,
+			MAZE_START_Y+(MAZE_BLOCK_HEIGHT * move_y)+MAZE_CHA_SPACE_HEIGHT,clear);
+
+			Lcd_Display_Frame_Buffer(1);
 			Maze_Debug_Printf("Clear!!\n");
 		}
 	}
@@ -710,7 +724,14 @@ void maze_character_move_left(void)
 			&& (stCharacter_Position.start_y == stCharacter_Position.dest_y))
 		{
 			game_play = 3; //clear
+			Lcd_Select_Frame_Buffer(1);
 
+			Lcd_Clr_Area(clr_x,clr_y,clr_x+MAZE_CHA_WIDTH,clr_y+MAZE_CHA_HEIGHT,0x0000); //black
+
+			Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * move_x)+MAZE_CHA_SPACE_WIDTH,
+			MAZE_START_Y+(MAZE_BLOCK_HEIGHT * move_y)+MAZE_CHA_SPACE_HEIGHT,clear);
+
+			Lcd_Display_Frame_Buffer(1);
 			Maze_Debug_Printf("Clear!!\n");
 		}
 	}
@@ -769,7 +790,14 @@ void maze_character_move_right(void)
 			&& (stCharacter_Position.start_y == stCharacter_Position.dest_y))
 		{
 			game_play = 3; //clear
+			Lcd_Select_Frame_Buffer(1);
 
+			Lcd_Clr_Area(clr_x,clr_y,clr_x+MAZE_CHA_WIDTH,clr_y+MAZE_CHA_HEIGHT,0x0000); //black
+
+			Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * move_x)+MAZE_CHA_SPACE_WIDTH,
+			MAZE_START_Y+(MAZE_BLOCK_HEIGHT * move_y)+MAZE_CHA_SPACE_HEIGHT,clear);
+
+			Lcd_Display_Frame_Buffer(1);
 			Maze_Debug_Printf("Clear!!\n");
 		}
 	}
