@@ -30,7 +30,7 @@ typedef struct
 #define EAST 0x04
 #define WEST 0x08
 
-#define MAZE_START_X 90
+#define MAZE_START_X 110
 #define MAZE_START_Y 60
 
 #define MAZE_BLOCK_WIDTH	30
