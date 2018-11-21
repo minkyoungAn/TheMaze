@@ -17,11 +17,10 @@ void Timer0_ISR(void)
 	{
 		play_time++;
 
-		mil = play_time%100;
-		sec = (play_time/100)%60;
-		min = (play_time/100)/60;
+		sec = (play_time%60);
+		min = (play_time/60);
 		
-		Lcd_Printf(170,30,0xFFFF,0x0000,1,1,"%02d:%02d:%02d",min,sec,mil);
+		Lcd_Printf(250,30,0xFFFF,0x0000,1,1,"%02d:%02d",min,sec);
 		Lcd_Display_Frame_Buffer(1);
 	}
 	else
@@ -47,7 +46,7 @@ void Timer0_ISR_Init(void)
 	
 	pISR_TIMER0 = Timer0_ISR;
 
-	Timer0_Delay(10);
+	Timer0_Delay(1000);
 }
 
 void Timer0_Init(void)

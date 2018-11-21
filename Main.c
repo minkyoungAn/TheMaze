@@ -637,9 +637,7 @@ void Display_bitmap(void)
 
 	Lcd_Draw_BMP(390, height_tmp+=37, paw);
 	
-	Lcd_Draw_BMP(120,20, timer);
-
-	Lcd_Draw_BMP(120, 20, timer);
+	Lcd_Draw_BMP(200,20, timer);
 }
 
 void Display_score(unsigned int score)			// display score
