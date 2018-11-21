@@ -376,16 +376,25 @@ void printf_maze_direction(int **maze_board)
 
 //display
 void display_maze(void)
-{
+{	
+	Lcd_Select_Frame_Buffer(1);	
+
+	Lcd_Clr_Area(MAZE_START_X,20,MAZE_START_X+(MAZE_WIDTH * MAZE_BLOCK_WIDTH),MAZE_START_Y+(MAZE_HEIGHT* MAZE_BLOCK_HEIGHT),0x0000);
+	Lcd_Clr_Area(MAZE_START_X+(MAZE_WIDTH * MAZE_BLOCK_WIDTH),140,MAZE_START_X+(MAZE_WIDTH * MAZE_BLOCK_WIDTH)+10,170,0x0000);
+	
+	Lcd_Draw_BMP(220,20, timer);
 	display_maze_info(maze_board);
+
+
+	Lcd_Printf(270,30,0xFFFF,0x0000,1,1,"00:00");
+	
+	Lcd_Display_Frame_Buffer(1);	
 }
 
 void display_maze_info(int **maze_board)
 {
 	int i,j;
-	int maze_value;
-	
-	Lcd_Select_Frame_Buffer(0);
+	int maze_value;	
 	
 	for(i=0;i<MAZE_HEIGHT;i++)
 	{
@@ -529,14 +538,9 @@ void display_destHome(void)
 }
 
 void display_character_start(void)
-{
-	Lcd_Select_Frame_Buffer(1);
-	Lcd_Copy(0,1);
-	
+{	
 	Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * stCharacter_Position.start_x)+MAZE_CHA_SPACE_WIDTH,
 	MAZE_START_Y+(MAZE_BLOCK_HEIGHT * stCharacter_Position.start_y)+MAZE_CHA_SPACE_HEIGHT,LTDOG);
-
-	Lcd_Display_Frame_Buffer(1);
 }
 
 void maze_character_move_up(void)

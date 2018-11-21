@@ -226,14 +226,17 @@ int Main(void)
 
 	Show_Welcome("LCD Test");
 
-    while(1)
-    {
-    	Lcd_BackLight_Enable(0);
-		Display_bitmap();
-		Display_text();
+	Lcd_BackLight_Enable(0);
+	Display_bitmap();
+	Display_text();	
+	Lcd_BackLight_Enable(1);
+
+	Lcd_Copy(0,1);
+
+	while(1)
+	{
     	make_maze();
     	display_maze();
-    	Lcd_BackLight_Enable(1);
 
 		game_play = 2;
 	    while(1)
@@ -639,7 +642,7 @@ void Display_bitmap(void)
 
 	Lcd_Draw_BMP(390, height_tmp+=37, paw);
 	
-	Lcd_Draw_BMP(220,20, timer);
+	//Lcd_Draw_BMP(220,20, timer);
 }
 
 void Display_score(unsigned int score)			// display score
