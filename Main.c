@@ -59,14 +59,15 @@ void Check_limit(signed char (*src)[4], signed char *x, signed char *y, signed c
 /*
 #define Left		0x04			// KEY1 for left
 #define Down		0x08			// KEY2 for down
-#define Rotate		0x10			// KEY3 for rotate or game start
+#define UP		0x10			// KEY3 for up or game start
 #define Right		0x20			// KEY4 for right
 */
 
-#define LEFT		(1)		
-#define RIGHT	    (2)			
-#define DOWN	    (3) 		
-#define ROTATE	    (4)			
+#define LEFT		(1)	
+#define DOWN	    (2) 		
+#define UP		    (3)	
+#define RIGHT	    (4)			
+
 
 signed char screen[20][10];			// game screen data
 signed char board[2][12] = { "333333333333",	// constant data for board outline
@@ -107,7 +108,8 @@ unsigned int touch_key = -1;
 unsigned int left_press = 0;
 unsigned int right_press = 0;
 unsigned int down_press = 0;
-unsigned int rotate_press = 0;
+unsigned int up_press = 0;
+
 
 unsigned int start_press = 0;
 unsigned int reset_press = 0;
@@ -189,9 +191,9 @@ void Touch_ISR()
     } else if (down_press == 1) {
         touch_key = DOWN;
         down_press = 0;
-    } else if (rotate_press == 1) {
-        touch_key = ROTATE;
-        rotate_press = 0;
+    } else if (up_press == 1) {
+        touch_key = UP;
+        up_press = 0;
     } else if (start_press == 0) {
         start_press = 1;
     } else if (reset_press == 0) {
@@ -223,6 +225,7 @@ int Main(void)
 
 	Show_Welcome("LCD Test");
 
+<<<<<<< .merge_file_a01796
     while(1)
     {
 		Display_bitmap();
@@ -234,6 +237,13 @@ int Main(void)
 	    {
 	    }
     }
+=======
+    //Draw_board();					// draw game board
+    Display_bitmap();
+    make_maze();
+    display_maze();
+	
+>>>>>>> .merge_file_a02000
 
     //TFT_string(6,18,Green,Black, "Press KEY3");	// wait KEY3 to start
     //TFT_string(6,20,Green,Black, "to start !");
@@ -451,7 +461,7 @@ void HW_Initial(void)
 	Exception_Init();
 	Uart_Init(115200);	
 
-    //Init_Key();
+    Init_Key();
 	Timer0_Init();
 	Graphic_Init();
 	
@@ -605,7 +615,11 @@ void Display_bitmap(void)
 
 	Lcd_Draw_BMP(390, height_tmp+=37, paw);
 	
+<<<<<<< .merge_file_a01796
 	Lcd_Draw_BMP(120, 20, timer);
+=======
+	Lcd_Draw_BMP(120,20, timer);
+>>>>>>> .merge_file_a02000
 
 
 }
