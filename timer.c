@@ -24,6 +24,13 @@ void Timer0_ISR(void)
 		Lcd_Printf(170,30,0xFFFF,0x0000,1,1,"%02d:%02d:%02d",min,sec,mil);
 		Lcd_Display_Frame_Buffer(1);
 	}
+	else
+	{
+		if ((game_play == 3) || (game_play == 4))
+		{
+			play_time = 0;
+		}
+	}
 	
 	rSRCPND1 |= BIT_TIMER0;
 	rINTPND1 |= BIT_TIMER0;
