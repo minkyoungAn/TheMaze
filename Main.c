@@ -232,6 +232,7 @@ int Main(void)
 		Display_text();
     	make_maze();
     	display_maze();
+
 		game_play = 2;
 	    while(1)
 	    {
