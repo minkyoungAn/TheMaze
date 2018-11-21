@@ -225,7 +225,6 @@ int Main(void)
 
 	Show_Welcome("LCD Test");
 
-<<<<<<< .merge_file_a01796
     while(1)
     {
 		Display_bitmap();
@@ -237,13 +236,6 @@ int Main(void)
 	    {
 	    }
     }
-=======
-    //Draw_board();					// draw game board
-    Display_bitmap();
-    make_maze();
-    display_maze();
-	
->>>>>>> .merge_file_a02000
 
     //TFT_string(6,18,Green,Black, "Press KEY3");	// wait KEY3 to start
     //TFT_string(6,20,Green,Black, "to start !");
@@ -614,14 +606,8 @@ void Display_bitmap(void)
 	Lcd_Draw_BMP(420, height_tmp+=37, epsilon2);
 
 	Lcd_Draw_BMP(390, height_tmp+=37, paw);
-	
-<<<<<<< .merge_file_a01796
+
 	Lcd_Draw_BMP(120, 20, timer);
-=======
-	Lcd_Draw_BMP(120,20, timer);
->>>>>>> .merge_file_a02000
-
-
 }
 
 void Display_score(unsigned int score)			// display score
