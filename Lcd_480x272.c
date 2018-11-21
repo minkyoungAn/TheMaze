@@ -41,6 +41,8 @@ void Lcd_Envid_On_Off(int onoff);
 void Lcd_Power_Enable(int invpwren,int pwren);
 void Lcd_Port_Init(void);
 void Lcd_Set_Address(unsigned int fp);
+void Lcd_BackLight_Enable(int enable);
+void Lcd_Enable(int enable);
 
 // Graphic
 
@@ -115,8 +117,18 @@ void Lcd_Port_Init(void)
 	
 	/* GPB0 backlight Enable */
 	rGPBCON=(rGPBCON&~(3<<0))|(1<<0);
-	rGPBDAT|= (1<<0);
+	//rGPBDAT|= (1<<0);
 
+}
+
+void Lcd_BackLight_Enable(int enable)
+{
+	(enable)?(rGPBDAT|= (1<<0)):(rGPBDAT&= ~(1<<0));
+}
+
+void Lcd_Enable(int enable)
+{
+	(enable)?(rGPGDAT|= (1<<12)):(rGPGDAT &= ~(1<<12));
 }
 
 void Graphic_Init(void)

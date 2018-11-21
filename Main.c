@@ -228,10 +228,12 @@ int Main(void)
 
     while(1)
     {
+    	Lcd_BackLight_Enable(0);
 		Display_bitmap();
 		Display_text();
     	make_maze();
     	display_maze();
+    	Lcd_BackLight_Enable(1);
 
 		game_play = 2;
 	    while(1)
