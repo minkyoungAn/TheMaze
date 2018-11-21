@@ -13,7 +13,7 @@ void Timer0_ISR(void)
 	
 	rINTMSK1 |= BIT_TIMER0;
 
-	if (game_play == 1)
+	if (game_play == 2)
 	{
 		play_time++;
 

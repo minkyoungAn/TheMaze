@@ -62,6 +62,12 @@ void Lcd_Draw_BMP(int x, int y, const unsigned char *fp);
 void make_maze();
 void display_maze(void);
 
+//character
+void maze_character_move_up(void);
+void maze_character_move_down(void);
+void maze_character_move_left(void);
+void maze_character_move_right(void);
+
 //common
 void Tick_Count_Start(void);
 

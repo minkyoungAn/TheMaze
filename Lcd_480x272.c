@@ -57,6 +57,7 @@ void Lcd_Set_Tran_Mode(int mode);
 void Lcd_Put_Rvs_Pixel(int y,int x,int color);
 void Lcd_Put_Pixel(int y,int x,int color);
 void Lcd_Clr_Screen(unsigned long color);
+void Lcd_Clr_Area(int x, int y, int xx, int yy, unsigned long color);
 void Lcd_Hline(int y, int x1, int x2, int color);
 void Lcd_Vline(int x, int y1, int y2, int color);
 void Lcd_Line(int x1,int y1,int x2,int y2,int color);
@@ -227,6 +228,19 @@ void Lcd_Clr_Screen(unsigned long color)
 		for(i=0;i<SCR_XSIZE;i++)
 		{
 	        Lcd_Put_Pixel(i,j,(int)color);
+		}
+	}
+}
+
+void Lcd_Clr_Area(int x, int y, int xx, int yy, unsigned long color)
+{
+	int i, j;
+
+	for (j=y;j<=yy;j++)
+	{
+		for(i=x;i<=xx;i++)
+		{
+			Lcd_Put_Pixel(i,j,(int) color);
 		}
 	}
 }

@@ -216,7 +216,7 @@ int Main(void)
     signed char left_limit_flag = 0, right_limit_flag = 0, y_limit_flag = 0, rotate_limit_flag = 0;
     signed char temp_tetris[4][4], del_tetris[4][4];
 
-	game_play = 0;
+	game_play = 1;
     HW_Initial();
     Tick_Count_Start();
     Timer0_ISR_Init();
@@ -229,7 +229,7 @@ int Main(void)
     	make_maze();
     	display_maze();
 	    
-		game_play = 1;
+		game_play = 2;
 	    while(1)
 	    {
 	    }
