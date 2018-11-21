@@ -606,6 +606,8 @@ void Display_bitmap(void)
 	Lcd_Draw_BMP(420, height_tmp+=37, epsilon2);
 
 	Lcd_Draw_BMP(390, height_tmp+=37, paw);
+	
+	Lcd_Draw_BMP(120,20, timer);
 
 	Lcd_Draw_BMP(120, 20, timer);
 }
