@@ -232,18 +232,7 @@ int Main(void)
 		Display_text();
     	make_maze();
     	display_maze();
-<<<<<<< HEAD
-	    Timer0_ISR_Init();
-		#if 0
-		do
-	    {
-	    }while(game_flag != 3)
-		#endif
-		Lcd_Printf(85, 140, SILVER, BLACK, 2,2, "GAME CLEAR !!!");
-		while(1);
 		
-=======
-
 	    play_time = 0;
 		game_play = 2;
 	    while(1)
@@ -262,7 +251,6 @@ int Main(void)
 	    		break;
 	    	}
 	    }
->>>>>>> 31b4ef87f98177b0ef5f7951df7168f88317b432
     }
 
     //TFT_string(6,18,Green,Black, "Press KEY3");	// wait KEY3 to start
