@@ -205,8 +205,8 @@ void Touch_ISR()
 }
 /* ---------------------------------------------------------------------------- */
 
-unsigned char game_play; //1ready:2play:3clear
-
+unsigned char game_play; //1ready:2play:3clear:4restart
+extern unsigned char play_time;
 int Main(void)
 {
     unsigned int  score = 0;
@@ -230,10 +230,24 @@ int Main(void)
 		Display_bitmap();
     	make_maze();
     	display_maze();
-	    
+
+	    play_time = 0;
 		game_play = 2;
 	    while(1)
 	    {
+	    	if (game_play == 3)
+	    	{
+	    		Lcd_Printf(85,140,SILVER,BLACK,2,2,"GAME CLEAR !!!");
+	    		break;
+	    	}
+	    }
+
+	    while(1)
+	    {
+	    	if(game_play == 4)
+	    	{
+	    		break;
+	    	}
 	    }
     }
 

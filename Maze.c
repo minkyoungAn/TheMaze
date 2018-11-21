@@ -9,7 +9,7 @@
 
 #include "images.h"
 
-#define DEBUG_MAZE
+//#define DEBUG_MAZE
 
 typedef struct
 {
@@ -621,7 +621,7 @@ void maze_character_move_down(void)
 	maze_value = maze_board[current_y][current_x];
 
 //move disp	
-	if ((maze_value & NORTH) == NORTH)
+	if ((maze_value & SOUTH) == SOUTH)
 	{
 		move = 1;
 		
@@ -680,7 +680,7 @@ void maze_character_move_left(void)
 	maze_value = maze_board[current_y][current_x];
 
 //move disp	
-	if ((maze_value & NORTH) == NORTH)
+	if ((maze_value & WEST) == WEST)
 	{
 		move = 1;
 		
@@ -739,7 +739,7 @@ void maze_character_move_right(void)
 	maze_value = maze_board[current_y][current_x];
 
 //move disp	
-	if ((maze_value & NORTH) == NORTH)
+	if ((maze_value & EAST) == EAST)
 	{
 		move = 1;
 		
