@@ -19,6 +19,7 @@ void Show_Welcome(char * msg);
 void Draw_block(unsigned short xPos, unsigned short yPos, unsigned short color, unsigned char type);	/* draw a block */
 void Draw_board(void);				// draw outline of game board
 void Display_bitmap(void);
+void Display_text(void);
 void Display_score(unsigned int score);			// display score
 void Draw_game_tetris(void);			// draw tetromino of game
 void Draw_next_tetris(signed char next);		// draw next tetromino
@@ -224,13 +225,18 @@ int Main(void)
     while(1)
     {
 		Display_bitmap();
+		Display_text();
     	make_maze();
     	display_maze();
 	    Timer0_ISR_Init();
-
-	    while(1)
+		#if 0
+		do
 	    {
-	    }
+	    }while(game_flag != 3)
+		#endif
+		Lcd_Printf(85, 140, SILVER, BLACK, 2,2, "GAME CLEAR !!!");
+		while(1);
+		
     }
 
     //TFT_string(6,18,Green,Black, "Press KEY3");	// wait KEY3 to start
@@ -553,6 +559,19 @@ void Draw_board(void)				/* draw outline of game board */
     
     //Line(217,279, 230,279, Magenta);
     //Lcd_Vline(217,217,230,WHITE);
+}
+void Display_text(void)
+{
+	Lcd_Printf(10, 130, KHAKI, BLACK, 1, 1, "KEY6");
+    Lcd_Printf(55, 130, ORANGE, BLACK, 1, 1, "<-");
+    Lcd_Printf(10, 150, KHAKI, BLACK, 1, 1, "KEY7");
+    Lcd_Printf(55, 150, ORANGE, BLACK, 1, 1, "Do");
+    Lcd_Printf(10, 170, KHAKI, BLACK, 1, 1, "KEY8");
+    Lcd_Printf(55, 170, ORANGE, BLACK, 1, 1, "Up");
+    Lcd_Printf(10, 190, KHAKI, BLACK, 1, 1, "KEY9");
+    Lcd_Printf(55, 190, ORANGE, BLACK, 1, 1, "->");
+    Lcd_Printf(10, 210, KHAKI, BLACK, 1, 1, "KEY10");
+    Lcd_Printf(10, 230, ORANGE, BLACK, 1, 1, "Reset");
 }
 
 void Display_bitmap(void)
