@@ -590,7 +590,7 @@ void Display_text(void)
     Lcd_Printf(10, 190, KHAKI, BLACK, 1, 1, "KEY9");
     Lcd_Printf(55, 190, ORANGE, BLACK, 1, 1, "->");
     Lcd_Printf(10, 210, KHAKI, BLACK, 1, 1, "KEY10");
-    Lcd_Printf(10, 230, ORANGE, BLACK, 1, 1, "Reset");
+    Lcd_Printf(10, 230, ORANGE, BLACK, 1, 1, "Restart");
 }
 
 void Display_bitmap(void)
