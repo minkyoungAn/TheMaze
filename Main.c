@@ -205,7 +205,6 @@ void Touch_ISR()
 }
 /* ---------------------------------------------------------------------------- */
 
-
 int Main(void)
 {
     unsigned int  score = 0;
@@ -222,11 +221,17 @@ int Main(void)
 
 	Show_Welcome("LCD Test");
 
-    //Draw_board();					// draw game board
-    Display_bitmap();
-    make_maze();
-    display_maze();
-	
+    while(1)
+    {
+		Display_bitmap();
+    	make_maze();
+    	display_maze();
+	    Timer0_ISR_Init();
+
+	    while(1)
+	    {
+	    }
+    }
 
     //TFT_string(6,18,Green,Black, "Press KEY3");	// wait KEY3 to start
     //TFT_string(6,20,Green,Black, "to start !");
@@ -448,7 +453,7 @@ void HW_Initial(void)
 	Timer0_Init();
 	Graphic_Init();
 	
-	Touch_Isr_Init(Touch_ISR);
+	//Touch_Isr_Init(Touch_ISR);
 	MMU_Init();
 }
 

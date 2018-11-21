@@ -2,6 +2,43 @@
 #include "option.h"
 #include "my_lib.h"
 
+unsigned int new_time;
+
+void Timer0_ISR(void)
+{
+	int min;
+	int sec;
+	int mil;
+	
+	rINTMSK1 |= BIT_TIMER0;
+	
+	new_time++;
+
+	mil = new_time%100;
+	sec = (new_time/100)%60;
+	min = (new_time/100)/60;
+	
+	Lcd_Printf(150,20,0xFFFF,0x0000,1,1,"%02d:%02d:%02d",min,sec,mil);
+	Lcd_Display_Frame_Buffer(1);
+	
+	rSRCPND1 |= BIT_TIMER0;
+	rINTPND1 |= BIT_TIMER0;
+	
+	rINTMSK1 &= ~BIT_TIMER0;
+}
+
+void Timer0_ISR_Init(void)
+{
+	rINTMSK1 &= ~BIT_TIMER0;
+
+	rSRCPND1 |= BIT_TIMER0;
+	rINTPND1 |= BIT_TIMER0;
+	
+	pISR_TIMER0 = Timer0_ISR;
+
+	Timer0_Delay(10);
+}
+
 void Timer0_Init(void)
 {
 	/* 
@@ -17,10 +54,12 @@ void Timer0_Init(void)
 	/* TCON¼³Á¤ :Dead zone disable,  auto reload off, output inverter off
 	*  manual update no operation, timer0 stop, TCNTB0=0, TCMPB0=0
 	*/
-	rTCON   = (0<<4)|(0<<3)|(0<<2)|(0<<1)|(1);
+	//rTCON   = (0<<4)|(0<<3)|(0<<2)|(0<<1)|(1);
+	rTCON   = (1<<3);
 	rTCNTB0 = 0;
 	rTCMPB0 = 0;
- 
+
+ 	//Timer0_ISR_Init();
 }
 
 void Timer0_Delay(int msec)
@@ -39,8 +78,8 @@ void Timer0_Delay(int msec)
 	
 	rTCON |= 1;	
 	
-	while(rTCNTO0 != 0);
-	rTCON &= ~1;	
+	//while(rTCNTO0 != 0);
+	//rTCON &= ~1;	
 }
 
 
