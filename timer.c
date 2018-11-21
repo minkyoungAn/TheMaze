@@ -20,7 +20,7 @@ void Timer0_ISR(void)
 		sec = (play_time%60);
 		min = (play_time/60);
 		
-		Lcd_Printf(250,30,0xFFFF,0x0000,1,1,"%02d:%02d",min,sec);
+		Lcd_Printf(270,30,0xFFFF,0x0000,1,1,"%02d:%02d",min,sec);
 		Lcd_Display_Frame_Buffer(1);
 	}
 	else

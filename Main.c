@@ -241,7 +241,7 @@ int Main(void)
 	    	if (game_play == 3)
 	    	{
 
-	    		Lcd_Printf(85,140,SILVER,BLACK,2,2,"GAME CLEAR !!!");
+	    		Lcd_Printf(108,140,SILVER,BLACK,2,2,"GAME CLEAR !!!");
 	    		break;
 	    	}
 	    }
@@ -639,7 +639,7 @@ void Display_bitmap(void)
 
 	Lcd_Draw_BMP(390, height_tmp+=37, paw);
 	
-	Lcd_Draw_BMP(200,20, timer);
+	Lcd_Draw_BMP(220,20, timer);
 }
 
 void Display_score(unsigned int score)			// display score
