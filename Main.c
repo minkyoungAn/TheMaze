@@ -203,6 +203,8 @@ void Touch_ISR()
 }
 /* ---------------------------------------------------------------------------- */
 
+unsigned char game_play; //1ready:2play:3clear
+
 int Main(void)
 {
     unsigned int  score = 0;
@@ -214,8 +216,10 @@ int Main(void)
     signed char left_limit_flag = 0, right_limit_flag = 0, y_limit_flag = 0, rotate_limit_flag = 0;
     signed char temp_tetris[4][4], del_tetris[4][4];
 
+	game_play = 0;
     HW_Initial();
     Tick_Count_Start();
+    Timer0_ISR_Init();
 
 	Show_Welcome("LCD Test");
 
@@ -224,8 +228,8 @@ int Main(void)
 		Display_bitmap();
     	make_maze();
     	display_maze();
-	    Timer0_ISR_Init();
-
+	    
+		game_play = 1;
 	    while(1)
 	    {
 	    }
@@ -601,7 +605,7 @@ void Display_bitmap(void)
 
 	Lcd_Draw_BMP(390, height_tmp+=37, paw);
 	
-	Lcd_Draw_BMP(50,380, timer);
+	Lcd_Draw_BMP(120, 20, timer);
 
 
 }
