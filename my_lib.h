@@ -60,6 +60,7 @@ void Lcd_Draw_BMP(int x, int y, const unsigned char *fp);
 
 //Maze
 void make_maze();
+void free_maze(void);
 void display_maze(void);
 
 //character

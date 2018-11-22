@@ -339,6 +339,16 @@ void make_maze() {
 #endif
 }
 
+void free_maze(void)
+{
+	int i;
+
+    for(i = 0 ; i<h ; i++) {
+		free(maze_board[i]);        
+    }
+    free(maze_board);
+}
+
 void maze_init() {
 	int i;
 	int j;

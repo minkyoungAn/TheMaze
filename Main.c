@@ -228,6 +228,7 @@ int Main(void)
 	    {
 	    	if(game_play == 4)
 	    	{
+	    		free_maze();
 	    		break;
 	    	}
 	    }
