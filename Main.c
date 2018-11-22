@@ -159,8 +159,8 @@ int Main(void)
 	    {
 	    	if (game_play == 3)
 	    	{
-
 	    		Lcd_Printf(108,140,SILVER,BLACK,2,2,"GAME CLEAR !!!");
+	    		maze_buzz_clear();
 	    		break;
 	    	}
 	    }
@@ -183,6 +183,7 @@ void HW_Initial(void)
 	Exception_Init();
 	Uart_Init(115200);	
 
+	Buzzer_Init();
     Init_Key();
 	Timer0_Init();
 	Graphic_Init();

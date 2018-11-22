@@ -7,6 +7,7 @@
 #include "2450addr.h"
 #include "My_lib.h"
 
+#include "melody_note.h"
 #include "images.h"
 
 //#define DEBUG_MAZE
@@ -856,4 +857,15 @@ void maze_character_move_right(void)
 			Lcd_Display_Frame_Buffer(1);
 		}		
 	}
+}
+
+void maze_buzz_clear(void)
+{
+	Beep(NOTE_C5,250);
+	Beep(NOTE_G4,250);
+	Beep(NOTE_E4,250);
+	Beep(NOTE_A4,250);
+	Beep(NOTE_B4,250);
+	Beep(NOTE_AS4,250);
+	Beep(NOTE_A4,250);
 }
