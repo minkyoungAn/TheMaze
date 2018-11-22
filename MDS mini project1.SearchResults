@@ -1,16 +1,5 @@
----- rotate Matches (15 in 0 files) ----
-Main.c:void Rotate_tetris(signed char (*src)[4], unsigned char size, signed char *width, signed char *height); // rotate tetromino
-Main.c:                 signed char *right_limit, signed char *y_limit, signed char *rotate_limit, signed char current);
-Main.c:        rotate_press = 0;
-Main.c:    signed char left_limit_flag = 0, right_limit_flag = 0, y_limit_flag = 0, rotate_limit_flag = 0;
-Main.c:        game_end_flag = tetris_end_flag = y_limit_flag = rotate_limit_flag = 0;
-Main.c:                tetris_end_flag = left_limit_flag = right_limit_flag = y_limit_flag = rotate_limit_flag = 0;
-Main.c:                left_limit_flag = right_limit_flag = rotate_limit_flag = 0;
-Main.c:            Check_limit(temp_tetris,&pos_x,&pos_y,&tetris_end_flag,&left_limit_flag,&right_limit_flag,&y_limit_flag,&rotate_limit_flag,current_tetris);
-Main.c:                            rotate_press = 1;
-Main.c:                            if(rotate_limit_flag == 0) {
-Main.c:void Rotate_tetris(signed char (*src)[4],unsigned char size, signed char *width, signed char *height)	/* rotate tetromino */
-Main.c:                 signed char *right_limit, signed char *y_limit, signed char *rotate_limit, signed char current)
-Main.c:                    *rotate_limit = 1;
-Main.c:            if(*rotate_limit == 1) break;
-Main.c:        *rotate_limit = 1;
+---- board Matches (6 in 0 files) ----
+Main.c:void Draw_board(void);				// draw outline of game board
+Main.c:#define	Xbase	    9 				// x base position of board
+Main.c:#define	Ybase		18			// y base position of board
+Main.c:signed char board[2][12] = { "333333333333",	// constant data for board outline

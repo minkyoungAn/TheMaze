@@ -7,8 +7,6 @@
 #include "2450addr.h"
 #include "my_lib.h"
 #include "macro.h"
-#include "tetris.h"
-
 #include "images.h"
 
 void MMU_Init(void);
@@ -48,63 +46,6 @@ void Display_text(void);
 #define	Xbase	    9 				// x base position of board
 #define	Ybase		18			// y base position of board
 
-/*
-#define Left		0x04			// KEY1 for left
-#define Down		0x08			// KEY2 for down
-#define UP		0x10			// KEY3 for up or game start
-#define Right		0x20			// KEY4 for right
-*/
-
-#define LEFT		(1)	
-#define DOWN	    (2) 		
-#define UP		    (3)	
-#define RIGHT	    (4)			
-
-
-signed char screen[20][10];			// game screen data
-signed char board[2][12] = { "333333333333",	// constant data for board outline
-                             "322222222223" };
-
-signed char tetris[7][4][4] = {			/* define tetromino */
-		{ "1100",			// 0 = O type (White)
-		  "1100",
-		  "0000",
-		  "0000" },
-		{ "1000",			// 1 = I type (Blue)
-		  "1000",
-		  "1000",
-		  "1000" },
-		{ "1300",			// 2 = T type (Yellow)
-		  "1100",
-		  "1300",
-		  "0000" },
-		{ "3100",			// 3 = Z type (Magenta)
-		  "1100",
-		  "1300",
-		  "0000" },
-		{ "1300",			// 4 = S type (Red)
-		  "1100",
-		  "3100",
-		  "0000" },
-		{ "1100",			// 5 = L type (Green)
-		  "3100",
-		  "3100",
-		  "0000" },
-		{ "1100",			// 6 = J type (Cyan)
-		  "1300",	
-		  "1300",
-		  "0000" }};
-
-// Global Variables Declaration
-unsigned int touch_key = -1;
-unsigned int left_press = 0;
-unsigned int right_press = 0;
-unsigned int down_press = 0;
-unsigned int up_press = 0;
-
-
-unsigned int start_press = 0;
-unsigned int reset_press = 0;
 
 // 터치패드가 눌림을 알수 있는 값
 volatile int Touch_pressed = 0;
