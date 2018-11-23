@@ -23,6 +23,8 @@ extern unsigned char warn[];
 extern unsigned char zeta[];
 extern unsigned char timer[];
 extern unsigned char clear[];
-
-
+extern unsigned char footup[];
+extern unsigned char footdo[];
+extern unsigned char footlt[];
+extern unsigned char footrt[];
 #endif

@@ -21,4 +21,7 @@
 #include "images/PAW.H"
 #include "images/TIMER.H"
 #include "images/CLEAR.H"
-
+#include "images/FOOTUP.H"
+#include "images/FOOTDO.H"
+#include "images/FOOTLT.H"
+#include "images/FOOTRT.H"

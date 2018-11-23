@@ -562,9 +562,6 @@ void maze_character_move_up(void)
 
 	int move_x;
 	int move_y;
-
-	int clr_x;
-	int clr_y;
 	
 	int maze_value;
 
@@ -577,19 +574,16 @@ void maze_character_move_up(void)
 
 	maze_value = maze_board[current_y][current_x];
 
-//move disp	
+//move check	
 	if ((maze_value & NORTH) == NORTH)
 	{
 		move = 1;
 		
 		move_x = current_x;
 		move_y = current_y -1;
-
-		clr_x = MAZE_START_X+(MAZE_BLOCK_WIDTH * current_x)+MAZE_CHA_SPACE_WIDTH;
-		clr_y = MAZE_START_Y+(MAZE_BLOCK_HEIGHT * current_y)+MAZE_CHA_SPACE_HEIGHT;
 	}
 
-//move check
+//move disp
 	if (move == 1)
 	{
 		stCharacter_Position.start_x = move_x;
@@ -603,23 +597,19 @@ void maze_character_move_up(void)
 			Maze_Debug_Printf("Clear!!\n");
 		}
 
+		Lcd_Select_Frame_Buffer(1);
+		
+		Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * current_x)+MAZE_CHA_SPACE_WIDTH,
+			MAZE_START_Y+(MAZE_BLOCK_HEIGHT * current_y)+MAZE_CHA_SPACE_HEIGHT,footup);
+			
 		if (game_play == 3)
 		{
-			Lcd_Select_Frame_Buffer(1);
-
-			Lcd_Clr_Area(clr_x,clr_y,clr_x+MAZE_CHA_WIDTH,clr_y+MAZE_CHA_HEIGHT,0x0000); //black
-
 			Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * move_x)+MAZE_CHA_SPACE_WIDTH,
 			MAZE_START_Y+(MAZE_BLOCK_HEIGHT * move_y)+MAZE_CHA_SPACE_HEIGHT,clear);
 			dogst = 0;
-			Lcd_Display_Frame_Buffer(1);
 		}
 		else
-		{
-			Lcd_Select_Frame_Buffer(1);
-
-			Lcd_Clr_Area(clr_x,clr_y,clr_x+MAZE_CHA_WIDTH,clr_y+MAZE_CHA_HEIGHT,0x0000); //black
-			
+		{			
 			if(dogst){
 				Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * move_x)+MAZE_CHA_SPACE_WIDTH,
 				MAZE_START_Y+(MAZE_BLOCK_HEIGHT * move_y)+MAZE_CHA_SPACE_HEIGHT,RTDOG);
@@ -627,9 +617,9 @@ void maze_character_move_up(void)
 				Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * move_x)+MAZE_CHA_SPACE_WIDTH,
 				MAZE_START_Y+(MAZE_BLOCK_HEIGHT * move_y)+MAZE_CHA_SPACE_HEIGHT,LTDOG);
 			}
-			
-			Lcd_Display_Frame_Buffer(1);
 		}
+			
+		Lcd_Display_Frame_Buffer(1);		
 	}
 }
 
@@ -640,9 +630,6 @@ void maze_character_move_down(void)
 
 	int move_x;
 	int move_y;
-
-	int clr_x;
-	int clr_y;
 	
 	int maze_value;
 
@@ -655,19 +642,16 @@ void maze_character_move_down(void)
 
 	maze_value = maze_board[current_y][current_x];
 
-//move disp	
+//move check
 	if ((maze_value & SOUTH) == SOUTH)
 	{
 		move = 1;
 		
 		move_x = current_x;
 		move_y = current_y + 1;
-
-		clr_x = MAZE_START_X+(MAZE_BLOCK_WIDTH * current_x)+MAZE_CHA_SPACE_WIDTH;
-		clr_y = MAZE_START_Y+(MAZE_BLOCK_HEIGHT * current_y)+MAZE_CHA_SPACE_HEIGHT;
 	}
 
-//move check
+//move disp
 	if (move == 1)
 	{
 		stCharacter_Position.start_x = move_x;
@@ -680,24 +664,20 @@ void maze_character_move_down(void)
 
 			Maze_Debug_Printf("Clear!!\n");
 		}
-
+		
+		Lcd_Select_Frame_Buffer(1);
+			
+		Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * current_x)+MAZE_CHA_SPACE_WIDTH,
+			MAZE_START_Y+(MAZE_BLOCK_HEIGHT * current_y)+MAZE_CHA_SPACE_HEIGHT,footdo);
+			
 		if (game_play == 3)
 		{
-			Lcd_Select_Frame_Buffer(1);
-
-			Lcd_Clr_Area(clr_x,clr_y,clr_x+MAZE_CHA_WIDTH,clr_y+MAZE_CHA_HEIGHT,0x0000); //black
-
 			Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * move_x)+MAZE_CHA_SPACE_WIDTH,
 			MAZE_START_Y+(MAZE_BLOCK_HEIGHT * move_y)+MAZE_CHA_SPACE_HEIGHT,clear);
 			dogst = 0;
-			Lcd_Display_Frame_Buffer(1);
 		}
 		else
 		{
-			Lcd_Select_Frame_Buffer(1);
-
-			Lcd_Clr_Area(clr_x,clr_y,clr_x+MAZE_CHA_WIDTH,clr_y+MAZE_CHA_HEIGHT,0x0000); //black
-
 			if(dogst){
 				Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * move_x)+MAZE_CHA_SPACE_WIDTH,
 				MAZE_START_Y+(MAZE_BLOCK_HEIGHT * move_y)+MAZE_CHA_SPACE_HEIGHT,RTDOG);
@@ -705,11 +685,9 @@ void maze_character_move_down(void)
 				Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * move_x)+MAZE_CHA_SPACE_WIDTH,
 				MAZE_START_Y+(MAZE_BLOCK_HEIGHT * move_y)+MAZE_CHA_SPACE_HEIGHT,LTDOG);
 			}
+		}			
 			
-			
-			
-			Lcd_Display_Frame_Buffer(1);
-		}
+		Lcd_Display_Frame_Buffer(1);
 	}
 }
 
@@ -720,9 +698,6 @@ void maze_character_move_left(void)
 
 	int move_x;
 	int move_y;
-
-	int clr_x;
-	int clr_y;
 	
 	int maze_value;
 
@@ -735,19 +710,16 @@ void maze_character_move_left(void)
 
 	maze_value = maze_board[current_y][current_x];
 
-//move disp	
+//move check	
 	if ((maze_value & WEST) == WEST)
 	{
 		move = 1;
 		
 		move_x = current_x - 1;
 		move_y = current_y;
-
-		clr_x = MAZE_START_X+(MAZE_BLOCK_WIDTH * current_x)+MAZE_CHA_SPACE_WIDTH;
-		clr_y = MAZE_START_Y+(MAZE_BLOCK_HEIGHT * current_y)+MAZE_CHA_SPACE_HEIGHT;
 	}
 
-//move check
+//move disp
 	if (move == 1)
 	{
 		stCharacter_Position.start_x = move_x;
@@ -761,28 +733,25 @@ void maze_character_move_left(void)
 			Maze_Debug_Printf("Clear!!\n");
 		}
 
+		Lcd_Select_Frame_Buffer(1);
+					
+		Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * current_x)+MAZE_CHA_SPACE_WIDTH,
+			MAZE_START_Y+(MAZE_BLOCK_HEIGHT * current_y)+MAZE_CHA_SPACE_HEIGHT,footlt);
+			
 		if (game_play == 3)
 		{
-			Lcd_Select_Frame_Buffer(1);
-
-			Lcd_Clr_Area(clr_x,clr_y,clr_x+MAZE_CHA_WIDTH,clr_y+MAZE_CHA_HEIGHT,0x0000); //black
-
 			Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * move_x)+MAZE_CHA_SPACE_WIDTH,
 			MAZE_START_Y+(MAZE_BLOCK_HEIGHT * move_y)+MAZE_CHA_SPACE_HEIGHT,clear);
 			dogst = 0;
-			Lcd_Display_Frame_Buffer(1);
 		}
 		else
 		{
-			Lcd_Select_Frame_Buffer(1);
-
-			Lcd_Clr_Area(clr_x,clr_y,clr_x+MAZE_CHA_WIDTH,clr_y+MAZE_CHA_HEIGHT,0x0000); //black
-
 			Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * move_x)+MAZE_CHA_SPACE_WIDTH,
 			MAZE_START_Y+(MAZE_BLOCK_HEIGHT * move_y)+MAZE_CHA_SPACE_HEIGHT,LTDOG);
 			dogst = 0;
-			Lcd_Display_Frame_Buffer(1);
 		}
+		
+		Lcd_Display_Frame_Buffer(1);
 	}
 }
 
@@ -793,9 +762,6 @@ void maze_character_move_right(void)
 
 	int move_x;
 	int move_y;
-
-	int clr_x;
-	int clr_y;
 	
 	int maze_value;
 
@@ -808,19 +774,16 @@ void maze_character_move_right(void)
 
 	maze_value = maze_board[current_y][current_x];
 
-//move disp	
+//move check	
 	if ((maze_value & EAST) == EAST)
 	{
 		move = 1;
 		
 		move_x = current_x + 1;
 		move_y = current_y;
-
-		clr_x = MAZE_START_X+(MAZE_BLOCK_WIDTH * current_x)+MAZE_CHA_SPACE_WIDTH;
-		clr_y = MAZE_START_Y+(MAZE_BLOCK_HEIGHT * current_y)+MAZE_CHA_SPACE_HEIGHT;
 	}
 
-//move check
+//move disp
 	if (move == 1)
 	{
 		stCharacter_Position.start_x = move_x;
@@ -833,29 +796,26 @@ void maze_character_move_right(void)
 			
 			Maze_Debug_Printf("Clear!!\n");
 		}
-
+		
+		Lcd_Select_Frame_Buffer(1);
+			
+		Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * current_x)+MAZE_CHA_SPACE_WIDTH,
+			MAZE_START_Y+(MAZE_BLOCK_HEIGHT * current_y)+MAZE_CHA_SPACE_HEIGHT,footrt);
+			
 		if (game_play == 3)
 		{
-			Lcd_Select_Frame_Buffer(1);
-
-			Lcd_Clr_Area(clr_x,clr_y,clr_x+MAZE_CHA_WIDTH,clr_y+MAZE_CHA_HEIGHT,0x0000); //black
-
 			Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * move_x)+MAZE_CHA_SPACE_WIDTH,
 			MAZE_START_Y+(MAZE_BLOCK_HEIGHT * move_y)+MAZE_CHA_SPACE_HEIGHT,clear);
 			dogst = 0;
-			Lcd_Display_Frame_Buffer(1);
 		}
 		else
 		{
-			Lcd_Select_Frame_Buffer(1);
-
-			Lcd_Clr_Area(clr_x,clr_y,clr_x+MAZE_CHA_WIDTH,clr_y+MAZE_CHA_HEIGHT,0x0000); //black
-
 			Lcd_Draw_BMP(MAZE_START_X+(MAZE_BLOCK_WIDTH * move_x)+MAZE_CHA_SPACE_WIDTH,
 			MAZE_START_Y+(MAZE_BLOCK_HEIGHT * move_y)+MAZE_CHA_SPACE_HEIGHT,RTDOG);
 			dogst = 1;
-			Lcd_Display_Frame_Buffer(1);
-		}		
+		}
+		
+		Lcd_Display_Frame_Buffer(1);
 	}
 }
 
